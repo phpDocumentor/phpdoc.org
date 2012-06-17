@@ -9,6 +9,7 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], array_merge($local_ips, $github_ips)))
 }
 chdir(__DIR__.'/..');
 
+`git fetch`;
 `git reset --hard origin/master`;
 `php composer.phar install`;
 `php app/console.php cache:clear`;
