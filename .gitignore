@@ -2,5 +2,7 @@ vendor
 app/config/parameters.ini
 app/bootstrap.php.cache
 .idea
-web/docs
+web/docs/1.4
+web/docs/2.0
+web/docs/latest
 web/bundles
