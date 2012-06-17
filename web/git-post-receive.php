@@ -9,8 +9,13 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], array_merge($local_ips, $github_ips)))
 }
 chdir(__DIR__.'/..');
 
+echo 'Updating installation<br />';
 `git fetch`;
 `git reset --hard origin/master`;
+
+echo 'Updating composer<br />';
 `php composer.phar install`;
-`php app/console.php cache:clear`;
-`php app/console.php cache:warmup`;
+
+echo 'Clearing cache<br />';
+`php app/console cache:clear`;
+`php app/console cache:warmup`;
