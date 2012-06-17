@@ -6,3 +6,7 @@ web/docs/1.4
 web/docs/2.0
 web/docs/latest
 web/bundles
+app/logs
+!app/logs/.gitkeep
+app/cache
+!app/cache/.gitkeep
