@@ -1,0 +1,114 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}phpDocumentor :: Templates{% endblock %}
+
+{% block body %}
+
+<div class="row content">
+  <div class="twelvecol">
+    <style>
+      table.themes
+      {
+        border-collapse: separate;
+        border-spacing: 10px;
+        font-size:      1.05em;
+        width:          100%
+      }
+
+      table.themes td
+      {
+        border:                    1px solid #ddd;
+        border-top-right-radius:   5px;
+        border-bottom-left-radius: 5px;
+        text-align:                center;
+        vertical-align:            bottom;
+        padding-right: 10px;
+      }
+
+      table.themes td a
+      {
+        border-top-right-radius:   5px;
+        border-bottom-left-radius: 5px;
+        padding: 15px 5px;
+        display: block;
+        width:   100%;
+        height:  100%;
+      }
+
+      table.themes td a:hover
+      {
+        background-color: #f9f9f9;
+      }
+    </style>
+
+    <script>
+      jQuery(document).ready(function() {
+        jQuery('.themes a').hover(function(e) {
+          if (e.pageX > (jQuery(window).width() / 2)) {
+            dir = 'right';
+            pos = jQuery(window).width() - e.pageX - 40;
+          } else {
+            dir = 'left';
+            pos = e.pageX + 40;
+          }
+
+          jQuery('#theme-preview')
+              .css('left', '').css('right', '')
+              .attr('src', '{{ asset('bundles/phpdocumentortheme/images/screenshots') }}/'+this.title+'.png')
+              .css('top', ((jQuery(window).height() - jQuery(this).outerHeight()) / 2) + jQuery(window).scrollTop())
+              .fadeIn()
+              .css(dir, pos);
+        }, function(e) {
+          jQuery('#theme-preview').hide();
+        });
+        jQuery('.themes a').mousemove(function(e) {
+          if (e.pageX > (jQuery(window).width() / 2)) {
+            dir = 'right';
+            pos = jQuery(window).width() - e.pageX + 40;
+          } else {
+            dir = 'left';
+            pos = e.pageX + 40;
+          }
+
+          jQuery('#theme-preview').css('left', '').css('right', '').css(dir, pos);
+        });
+
+        jQuery('.themes a').click(function (e) {
+          href = this.href;
+          jQuery('#theme_show').slideUp('fast', function() {
+            jQuery('#theme_show').load(href, {}, function(){
+              jQuery('#theme_show img').css('cursor', 'pointer').click(function(){
+                jQuery('#theme_show').slideUp('fast');
+              });
+              jQuery('#theme-preview').hide();
+              jQuery('#theme_show').slideDown('slow', function(){
+                showSidebar();
+              });
+            });
+          });
+          return false;
+        });
+      });
+    </script>
+
+    <div style="display: none; height: auto; border-bottom: 2px solid silver; margin-bottom: 10px; padding: 10px;" id="theme_show"></div>
+
+    {% for theme_row in themes %}
+      <div class="row content themes">
+      {% for theme in theme_row %}
+        <div class="threecol {{ theme.class }}">
+          <div class="border padded">
+            <a href="{{ path('theme_show', { 'name': theme.slug }) }}" title="{{ theme.slug }}">
+              <img src="{{ asset('bundles/phpdocumentortheme/images/thumbnails/'~theme.slug~'.png') }}" alt="{{ theme.name }}"><br />
+              {{ theme.name }}
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    {% endfor %}
+
+    <img id="theme-preview" src="" style="position: absolute; display: none; width: 440px; z-index: 5; border: 1px solid gray; background: white;" alt="Preview"/>
+  </div>
+</div>
+{% endblock %}

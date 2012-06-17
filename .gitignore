@@ -1,0 +1,6 @@
+vendor
+app/config/parameters.ini
+app/bootstrap.php.cache
+.idea
+web/docs
+web/bundles

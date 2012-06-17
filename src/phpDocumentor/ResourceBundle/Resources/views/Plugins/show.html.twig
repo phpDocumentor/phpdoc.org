@@ -1,0 +1,47 @@
+{% extends 'phpDocumentorResourceBundle::layout.html.twig' %}
+
+{% block title %}phpDocumentor :: Plugin :: {{ plugin.name }} {% endblock %}
+
+{% block content_header '' %}
+
+{% block content %}
+
+  <h1><img src="{{ asset('bundles/phpdocumentorresource/images/icons/plugin.png') }}" alt="Plugin" align="absmiddle"/> {{ plugin.name }}</h1>
+
+  <div style="float: right">
+  <h3>Comments</h3>
+  {% for comment in plugin.comments %}
+    <small>
+    {% if (comment.rating) %}
+    Rating: {{ comment.rating }} / 5<br />
+    {% endif %}
+    </small>
+    <cite style="white-space: pre-wrap;">{{ comment.body }}</cite><br />
+    <hr/>
+  {% endfor %}
+  <form action="{{ path('phpdocumentor_resource_comments_create') }}" method="post">
+    <input type="hidden" name="resource" value="{{ plugin.name }}"/>
+    <textarea rows="5" cols="30" name="body"></textarea><br />
+    <input type="submit" value="Add"/>
+  </form>
+  </div>
+
+  <h3>Description</h3>
+  {{ plugin.description }}
+
+  {% if (plugin.dependson.count()) %}
+    <h3>Depends on</h3>
+    {% for dependency in plugin.dependson %}
+      <a href="{{ path('phpdocumentor_resource_plugins_show', {'name': dependency.name}) }}">{{ dependency.name }}</a><br />
+    {% endfor %}
+  {% endif %}
+
+  <h3>Author</h3>
+  {{ plugin.author.firstname }} {{ plugin.author.lastname }} ({{ plugin.author.username }})<br />
+  <a href="mailto:{{ plugin.author.email }}">{{ plugin.author.email }}</a><br />
+  {% if plugin.author.website %}
+  <a href="{{ plugin.author.website }}">{{ plugin.author.website }}</a><br />
+  {% endif %}
+
+
+{% endblock %}

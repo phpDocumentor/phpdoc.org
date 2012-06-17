@@ -1,0 +1,284 @@
+/**
+ * Used color palette is http://www.colourlovers.com/palette/76496/Viburnum by
+ * Pyramus
+ */
+@import url(http://fonts.googleapis.com/css?family=Playball);
+
+div.content ul
+{
+    margin-bottom: 0.5em;
+}
+
+th {
+    white-space: nowrap;
+    padding-right: 10px;
+}
+
+th, td
+{
+    vertical-align: top;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+a
+{
+    color: #55A72F;  /* #4f814b; */
+}
+
+.row li, .bordered-row-container li
+{
+    margin-left: 20px;
+}
+
+.padded
+{
+    padding: 10px;
+}
+
+.row .border
+{
+    border: 1px solid #55A72F;  /* #4f814b; */
+    background: white;
+    padding-top: 0;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 100%;
+}
+
+.row p
+{
+    margin: 0 5px 5px 5px;
+    text-align: justify;
+}
+
+#footer .twelvecol a
+{
+    color: #A2EB80;
+}
+
+#footer .twelvecol p
+{
+    margin: 5px;
+    text-align: right;
+    height: 50px;
+}
+
+#footer .twelvecol
+{
+    font-size: 0.7em;
+    color: #A2EB80;
+}
+
+#footer .contact td, #footer .contact th {
+    padding-bottom: 0;
+}
+
+#footer .contact {
+    margin-left: 20px;
+    margin-top: 3px;
+    color: #55A72F;  /* #4f814b; */
+    float: right;
+}
+
+#slidedeck_frame
+{
+    height: 200px;
+    margin: 0 auto;
+}
+
+dl.slidedeck dt.spine .index
+{
+    display: none !important;
+}
+
+.skin-slidedeck dl.slidedeck dt.spine
+{
+    color: #dcf2d7;
+    font-size: 1em;
+    background: #171310;
+}
+
+.skin-slidedeck dl.slidedeck dd.slide_1 div
+{
+    background: white url('../images/compass_rose.jpg') no-repeat 300px -100px ;
+}
+
+.skin-slidedeck dl.slidedeck dd.slide_2 div
+{
+    height: 180px;
+    background: white url('../images/default-bg.png') no-repeat 400px 50px;
+}
+
+.well
+{
+    margin-bottom: 30px;
+}
+
+#use-cases a.title
+{
+    float:         left;
+    color:         #55A72F;  /* #4f814b; */
+    font-size:     1.2em;
+    height:        20px;
+    line-height:   20px;
+    padding-right: 10px;
+    margin:        5px 10px;
+    border-right:  1px solid #e0e0e0;
+    font-family:   'Forum', cursive;
+}
+
+#use-cases a.arrow
+{
+    float:           left;
+    height:          20px;
+    line-height:     20px;
+    font-size:       1.8em;
+    text-decoration: none;
+}
+
+#use-cases a.arrow.left
+{
+    display: none;
+}
+
+#use-cases a.arrow.right
+{
+    float:        right;
+    margin-right: 10px;
+}
+
+#use-cases ul.cases
+{
+    position:   relative;
+    top:        0;
+    margin:     0 25px 0 120px;
+    padding:    0;
+    list-style: none;
+}
+
+#use-cases ul.cases li
+{
+    display:    inline;
+    list-style: none;
+    height:     31px;
+    margin:     0 10px 8px 8px;
+}
+
+#use-cases ul.cases li img:hover
+{
+    opacity: 1;
+}
+#use-cases ul.cases li img
+{
+    max-height: 30px;
+    padding:    0 5px;
+    opacity:    0.5;
+}
+
+.row.use-cases
+{
+    position: relative;
+    top: -15px;
+}
+
+#use-cases
+{
+    margin-bottom: 15px;
+    height:        30px;
+    overflow-y:    hidden;
+    text-align:    center;
+}
+
+.row.content h1
+{
+    font-family: 'Forum', serif;
+    font-size: 1.8em;
+    font-weight: normal;
+    margin-bottom: 5px;
+    color: #55A72F;  /* #4f814b; */
+    border-bottom: 1px dashed #f0f0f0;
+}
+
+.bordered-row-container .row.content h1
+{
+    margin-top: 10px;
+}
+
+.big-buttons
+{
+    margin-top: -30px;
+}
+.big-buttons .border
+{
+    margin-bottom:    25px;
+    display:          block;
+    text-decoration:  none;
+    font-size:        1.2em;
+    /*background-color: #55A72F;  *//* #4f814b; */
+    color:            white;
+    /*border-color:     #1b2615;*/
+
+    background: #75a70d; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #bfd255 0%, #8eb92a 72%, #72aa00 96%, #9ecb2d 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#bfd255), color-stop(72%,#8eb92a), color-stop(96%,#72aa00), color-stop(100%,#9ecb2d)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #bfd255 0%,#8eb92a 72%,#72aa00 96%,#9ecb2d 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #bfd255 0%,#8eb92a 72%,#72aa00 96%,#9ecb2d 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #bfd255 0%,#8eb92a 72%,#72aa00 96%,#9ecb2d 100%); /* IE10+ */
+    background: radial-gradient(center, ellipse cover, #bfd255 0%,#8eb92a 72%,#72aa00 96%,#9ecb2d 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    padding: 40px 0 15px 0;
+    box-shadow: inset 0 0 10px gray;
+}
+
+.big-buttons .border:hover
+{
+    box-shadow: 0 0 20px #1b2615;
+    margin-bottom: 0;
+}
+
+.big-buttons a.border
+{
+    text-shadow: black 0px 0px 15px;
+    margin-top:  15px;
+    text-align:  center;
+    line-height: 1.2em;
+    font-family: 'Playball';
+    font-size:   2.5em;
+    padding-top: 10px;
+    text-decoration: underline;
+}
+
+.bordered-row-container {
+    border:                     1px solid #55A72F;  /* #4f814b; */
+    background:                 white;
+    border-top-left-radius:     10px;
+    border-bottom-right-radius: 10px;
+    width:                      100%;
+    max-width:                  1140px;
+    min-width:                  755px;
+    margin:                     0 auto;
+    overflow:                   hidden;
+    margin-top:              30px;
+}
+
+.bordered-row-container .row
+{
+    border-bottom: 1px solid #dcf2d7;
+}
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+@media handheld, only screen and (max-width: 767px)
+{
+
+}
+
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
+@media only screen and (-webkit-min-device-pixel-ratio: 2)
+{
+
+}

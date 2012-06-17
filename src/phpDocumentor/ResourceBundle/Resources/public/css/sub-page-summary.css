@@ -1,0 +1,32 @@
+/* The summary container */
+.page-summary {
+}
+
+/* The element which contains the sub page data */
+.page-summary .sub-page {
+}
+
+/* The element which contains the link to the sub page */
+.page-summary h3 {
+}
+
+/* The link to the sub page */
+.page-summary h3 a {
+}
+
+/* The thumbnail of the sub page */
+.page-summary img.preview-image {
+}
+
+/* The element which contains the paragraph of the sub page */
+.page-summary .excerpt {
+}
+
+/* The paragraph with the sub page excerpt */
+.page-summary .excerpt p {
+}
+
+/* The clearer */
+.page-summary .clear {
+  clear: both;
+}

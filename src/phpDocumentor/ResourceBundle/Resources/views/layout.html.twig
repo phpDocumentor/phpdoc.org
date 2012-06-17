@@ -1,0 +1,148 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% block title %}phpDocumentor Portal{% endblock %}</title>
+    <link rel="Shortcut Icon" href="http://www.phpdoc.org/wp-content/templates/elements-of-seo/images/favicon.ico" type="image/x-icon" />
+    <link rel='stylesheet' id='toc_css-css'  href='{{ asset('bundles/phpdocumentorresource/css/style.css') }}' type='text/css' media='all' />
+    <script type='text/javascript' src='{{ asset('bundles/phpdocumentorresource/js/l10n.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('bundles/phpdocumentorresource/js/jquery.js') }}'></script>
+    <link rel='index' title='phpDocumentor' href='http://www.phpdoc.org/' />
+    <meta name="generator" content="WordPress 3.2.1" />
+    <link rel="stylesheet" href="{{ asset('bundles/phpdocumentorresource/css/sub-page-summary.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('bundles/phpdocumentorresource/css/resource.css') }}" type="text/css" />
+    <style type="text/css" media="screen">
+        <!-- @import url({{ asset('bundles/phpdocumentorresource/css/main-style.css') }}); -->
+
+        body {
+            font: 12px/18px Verdana, Arial, Helvetica, sans-serif;
+        }
+        div.related {
+            background: inherit;
+            color: inherit;
+        }
+
+        div.related a {
+            color: inherit;
+        }
+
+        div.sphinxsidebar a {
+            color: #069DD5;
+        }
+
+        div.sphinxsidebarwrapper, #content div.sphinxsidebarwrapper h3,  #content h1  {
+            margin-top: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        div.document, div.body h1 {
+            background: inherit;
+        }
+
+        #content h2 {
+            background: inherit;
+            font-size: 160%;
+        }
+
+        pre, span.pre {
+            background-color: black;
+            color: white;
+            font-size: 1.1em;
+            padding: 1px 5px;
+        }
+        pre {
+            padding:  10px;
+        }
+
+        div.sphinxsidebar h4, div.sphinxsidebar h3 a, div.sphinxsidebar ul {
+            color: inherit;
+        }
+
+        .toctree-wrapper ul {
+            list-style: decimal;
+            margin-bottom: 4px;
+        }
+
+        .toctree-wrapper li {
+            margin-left: 18px;
+        }
+
+        .section ul {
+            list-style: circle;
+            margin-bottom: 4px;
+        }
+
+        .section li {
+            margin-left: 18px;
+        }
+
+        blockquote {
+            padding:  10px;
+            background: #f9f9f9;
+            color: gray;
+            border: 1px solid #f0f0f0;
+        }
+
+        #content blockquote p {
+            color: gray;
+        }
+    </style>
+    <body>
+      <div id="wrap">
+
+          <div id="stripe"></div>
+
+          <div id="nav">
+              <ul>
+                  <li><a href="http://www.phpdoc.org">Home</a></li>
+                  <li class="page_item page-item-9"><a
+                          href="http://www.phpdoc.org/features/"
+                          title="Features">Features</a></li>
+                  <li class="page_item page-item-6"><a
+                          href="http://docs.phpdoc.org/"
+                          title="Documentation">Documentation</a></li>
+                  <li class="page_item page-item-2"><a
+                          href="http://www.phpdoc.org/about/"
+                          title="About">About</a></li>
+              </ul>
+          </div>
+
+          <div id="masthead">
+              <h1><a href="http://www.phpdoc.org/2">phpDocumentor</a></h1>
+
+              <h3>PHP 5.3 compatible API Documentation generator aimed at projects of
+                  all
+                  sizes and Continuous Integration</h3>
+          </div>
+
+          <div id="banner2" onclick="location.href='http://www.phpdoc.org';"
+               style="cursor: pointer;"></div>
+
+          <div id="content">
+              {% if app.session.flash('notice') %}
+                  <div class="flash-message">
+                      <em>Notice</em>: {{ app.session.flash('notice') }}
+                  </div>
+              {% endif %}
+
+              {% block content %}
+              {% endblock %}
+            </div>
+      </div>
+      <!-- end wrap -->
+
+
+      <!-- begin footer -->
+
+      <div style="clear:both;"></div>
+      <div style="clear:both;"></div>
+
+
+      <div id="footer">
+          <p>Elements of SEO is Powered by WordPress | <a
+                  href="http://www.alibiproductions.com/html/website-development.html">Accessible
+              Website Development</a> - Alibi Productions</p>
+      </div>
+
+    </body>
+</html>
