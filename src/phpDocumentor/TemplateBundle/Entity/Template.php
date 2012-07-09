@@ -11,13 +11,13 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Template
 {
     /**
-     * @ORM\Column(type="string", length="100")
+     * @ORM\Column(type="string", length=100)
      */
     protected $name;
 
     /**
      * @ORM\Id
-     * @ORM\Column(type="string", length="100")
+     * @ORM\Column(type="string", length=100)
      */
     private $slug;
 
