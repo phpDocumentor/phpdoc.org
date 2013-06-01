@@ -1,12 +1,12 @@
-{% extends '::layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block title %}phpDocumentor 2 &laquo; Contact{% endblock %}
 
 {% block body %}
 
-<div class="row content">
-    <div class="span3">
-        <div class="well">
+<section class="row">
+    <section class="span4">
+        <article class="content-overview">
             <h1>Contact</h1>
             <p>Got a question? Need some help? You can find help at several locations:</p>
             <table class="table">
@@ -14,14 +14,14 @@
                 <tr><th>Twitter</th><td><a href="http://twitter.com/phpdocumentor">@phpdocumentor</a></td></tr>
                 <tr><th>IRC</th><td>#phpdocumentor at Freenode</td></tr>
             </table>
-        </div>
-    </div>
-    <div class="span9">
-        <div class="well">
+        </article>
+    </section>
+    <section class="span8">
+        <article class="content-overview">
             <h1>#phpdocumentor on irc.freenode.net</h1>
             <iframe src="http://webchat.freenode.net?randomnick=1&channels=phpdocumentor&uio=MTE9ODIdf" width="100%" height="400" style="border: none"></iframe>
-        </div>
-    </div>
-</div>
+        </article>
+    </section>
+</section>
 
 {% endblock %}
