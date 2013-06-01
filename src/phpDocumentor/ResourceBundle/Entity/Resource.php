@@ -12,7 +12,7 @@ class Resource
 {
   /**
    * @ORM\Id
-   * @ORM\Column(type="string", length="100")
+   * @ORM\Column(type="string", length=100)
    */
   protected $name;
 

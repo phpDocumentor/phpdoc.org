@@ -10,3 +10,5 @@ app/logs
 !app/logs/.gitkeep
 app/cache
 !app/cache/.gitkeep
+.vagrant
+composer.phar
