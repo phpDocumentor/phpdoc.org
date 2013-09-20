@@ -102,65 +102,107 @@
                 </section>
             </article>
         </section>
+        <section class="span4" id="quickstart">
+            <article id="installing">
+                <h2>Installing</h2>
+                <div class="accordion" id="installation">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#installation" href="#install-pear">
+                                <i class="icon-chevron-right"></i> Using PEAR
+                            </a>
+                        </div>
+                        <div id="install-pear" class="accordion-body collapse in">
+                            <div class="accordion-inner">
+                                <p>With <a href="">PEAR</a> installed, please run the following commands:</p>
+                                <pre><code class="language-php">pear channel-discover pear.phpdoc.org
+pear install phpdoc/phpDocumentor</code></pre>
+                                <p>
+                                    Once the installation is complete a global command, called <code>phpdoc</code>, will be
+                                    available.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#installation" href="#install-composer">
+                                <i class="icon-chevron-right"></i> Using Composer
+                            </a>
+                        </div>
+                        <div id="install-composer" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <p>
+                                    Add a dependency to
+                                    <a href="https://packagist.org/packages/phpdocumentor/phpdocumentor">phpdocumentor/phpdocumentor</a>
+                                    to the <code>require-dev</code> section of your project's <code>composer.json</code>
+                                    configuration file, and update your application.
+                                </p>
 
-        <section class="span4">
-            <article class="templates">
-                <h1>Available templates</h1>
-                <table>
-                    <tr>
-                        <td>
-                            <img
-                                    src="{{ asset('bundles/phpdocumentorwebsite/images/templates/responsive.png') }}"
-                                    alt="responsive"
-                                    />
-                        </td>
-                        <td>
-                            <img
-                                    src="{{ asset('bundles/phpdocumentorwebsite/images/templates/abstract.png') }}"
-                                    alt="abstract"
-                                    />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img
-                                    src="{{ asset('bundles/phpdocumentorwebsite/images/templates/new-black.png') }}"
-                                    alt="new-black"
-                                    />
-                        </td>
-                        <td>
-                            <img
-                                    src="{{ asset('bundles/phpdocumentorwebsite/images/templates/old-ocean.png') }}"
-                                    alt="old-ocean"
-                                    />
-                        </td>
-                    </tr>
-                </table>
+                                <p>
+                                    The following code is an example of a minimal <code>composer.json</code> file:
+                                </p>
+                                <pre><code class="language-javascript">{
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "2.*"
+    }
+}</code></pre>
+                                <p>
+                                    Once the installation is complete there will be a command <code>phpdoc.php</code> in
+                                    the binary folder of your application (<code>/vendor/bin</code> by default).
+                                </p>
+                                <p class="alert alert-info">
+                                    <strong>Hint</strong>: phpDocumentor consumes a fair amount of dependencies, if this is inconvenient
+                                    then we suggest you choose one of the other installation options.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#installation" href="#install-phar">
+                                <i class="icon-chevron-right"></i> As a PHAR
+                            </a>
+                        </div>
+                        <div id="install-phar" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <p><a href="http://phpdoc.org/phpDocumentor.phar">Download the phar binary</a>.</p>
+                                <p>
+                                    Then you can run phpDocumentor by invoking php and providing the phar binary as
+                                    argument:
+                                    <pre><code class="language-php">php phpDocumentor.phar</code></pre>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#installation" href="#install-manual">
+                                <i class="icon-chevron-right"></i> Manually
+                            </a>
+                        </div>
+                        <div id="install-manual" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <p>To do a manual installation, follow these steps</p>
+                                <ol>
+                                    <li>
+                                        Locate the latest release on the
+                                        <a href="https://github.com/phpDocumentor/phpDocumentor2/releases">releases page for phpDocumentor2 on Github</a>
+                                    </li>
+                                    <li>Download the attached tarball (not the source code!)</li>
+                                    <li>Extract the downloaded tarball into your destination directory.</li>
+                                </ol>
+                                <p>
+                                    After you have done the above can the executable be found at
+                                    <code>bin/phpdoc.php</code> in the installation directory.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </article>
-
-            <article class="consumers">
-                <h1>Who uses phpDocumentor?</h1>
-                <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/zf.png') }}" alt="Zend Framework"/>
-                <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/agavi.png') }}" alt="Agavi"/>
-                <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/aura.png') }}" alt="Aura"/>
-                <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/ezpublish.gif') }}" alt="ezPublish"/>
-                <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/modx.png') }}" alt="ModX"/>
-                <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/phing.gif') }}" alt="ezPublish"/>
-                <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/propel.png') }}" alt="ModX"/>
-                <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/pyrocms.png') }}" alt="PyroCMS"/>
-                <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/Sugar-LOGO-2012.png') }}" alt="SugarCRM"/>
-            </article>
-
-            <article class="sponsors">
-                <h1>Sponsors</h1>
-                <figure style="text-align: center">
-                    <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/ingewikkeld.png') }}" alt="Ingewikkeld Logo"/>
-                    <figcaption>Ingewikkeld sponsors @mvriel to work 8 hours per week on phpDocumentor</figcaption>
-                </figure>
-                <figure style="text-align: center">
-                    <img src="{{ asset('bundles/phpdocumentorwebsite/images/logos/phpstorm.gif') }}" alt="phpStorm Logo"/>
-                    <figcaption>Jetbrains sponsors phpDocumentor with licenses for phpStorm</figcaption>
-                </figure>
+            <article id="generating">
+                <h2>Generating your documentation</h2>
             </article>
         </section>
     </section>

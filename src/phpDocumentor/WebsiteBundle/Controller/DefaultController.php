@@ -36,19 +36,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/components/{name}", name="component")
+     * @Route("/showcases", name="showcases")
      * @Template()
      */
-    public function componentAction($name)
+    public function showcasesAction()
     {
-        $parser = new \dflydev\markdown\MarkdownExtraParser();
-        $data = json_decode(file_get_contents(
-            'https://api.github.com/repos/phpDocumentor/'.$name
-        ));
-        $data->readme = $parser->transformMarkdown(file_get_contents(
-            'https://raw.github.com/phpDocumentor/' . $name . '/master/README.md'
-        ));
-
-        return array('data' => $data);
+        return array();
     }
 }

@@ -22,7 +22,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new phpDocumentor\ResourceBundle\phpDocumentorResourceBundle(),
-            new phpDocumentor\TemplateBundle\phpDocumentorTemplateBundle(),
+            new phpDocumentor\StyleBundle\phpDocumentorStyleBundle(),
             new phpDocumentor\WebsiteBundle\phpDocumentorWebsiteBundle(),
         );
 

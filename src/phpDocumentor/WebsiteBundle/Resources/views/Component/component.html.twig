@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}phpDocumentor 2  &laquo; About{% endblock %}
+
+{% block body %}
+
+<div class="row content">
+    <section class="span8">
+        <article>{{ data.readme | raw }}</article>
+    </section>
+
+    <section class="span4">
+        <article class="clearfix">
+            <h1>{{ data.name }}</h1>
+            <p><i>{{ data.description }}</i></p>
+            <ul class="nav nav-list">
+                <li class="nav-header"><i class="icon-map-marker"></i> Navigation</li>
+                <li>
+                    <a href="{{ data.html_url }}/issues">Issue tracker</a>
+                </li>
+                <li>
+                    <a href="{{ data.html_url }}">Repository</a>
+                </li>
+                <li class="nav-header"><i class="icon-book"></i> Documentation</li>
+                <li>
+                    <a href="/components/{{data.name}}/docs"> Reference</a>
+                </li>
+                <li>
+                    <a href="/components/{{data.name}}/api"> API</a>
+                </li>
+            </ul>
+            <a href="{{ path('component_list') }}" class="pull-right">Back to overview &raquo;</a>
+        </article>
+    </section>
+</div>
+
+{% endblock %}

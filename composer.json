@@ -16,7 +16,8 @@
         "dflydev/markdown":"1.*",
         "friendsofsymfony/user-bundle":"1.3.*",
         "knplabs/knp-menu":"2.0.*@dev",
-        "knplabs/knp-menu-bundle":"2.0.*@dev"
+        "knplabs/knp-menu-bundle":"2.0.*@dev",
+        "knplabs/github-api": "1.2.*@dev"
     },
     "scripts": {
         "post-install-cmd": [

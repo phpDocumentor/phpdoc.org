@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}phpDocumentor 2  &laquo; About{% endblock %}
+
+{% block body %}
+<style>
+    .content .span4 article p {
+        min-height: 4em;
+    }
+    .content .span4 article h1 img {
+        max-height: 30px;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+
+</style>
+<div class="row content">
+    <section class="span4">
+        <article class="component-header clearfix">
+            <h1><img src="{{ asset('bundles/phpdocumentorwebsite/images/logo-icon.png') }}" alt="Logo" /> Components</h1>
+            <p>
+                phpDocumentor benefits from components created by Zend, Symfony and others, and phpDocumentor has some
+                unique components of its own.
+            </p>
+        </article>
+    </section>
+    {% for repository in repositories %}
+        <section class="span4">
+            <article class="clearfix">
+                <h1>{{ repository.name }}</h1>
+                <p>{{ (repository.description ?: '<i>There is no description for this component</i>')|raw }}</p>
+                <a href="{{ path('component_show',{'name' : repository.name}) }}" class="pull-right">Read more &raquo;</a>
+            </article>
+        </section>
+        {% if (loop.index+1) is divisibleby(3) %}
+</div>
+<div class="row content">
+        {% endif %}
+    {% endfor %}
+    </section>
+</div>
+{% endblock %}

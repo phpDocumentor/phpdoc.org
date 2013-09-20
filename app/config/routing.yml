@@ -7,8 +7,8 @@ phpDocumentorWebsiteBundle:
     type:     annotation
     prefix:   /
 
-phpDocumentorTemplateBundle:
-    resource: "@phpDocumentorTemplateBundle/Controller/"
+phpDocumentorStyleBundle:
+    resource: "@phpDocumentorStyleBundle/Controller/"
     type:     annotation
     prefix:   /
 
