@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<project name="phpdoc.org" basedir="." default="build:stage:commit">
+
+    <target name="build:stage:commit"/>
+
+    <target name="build:stage:deploy"/>
+
+    <target name="build:action:phpunit">
+        <exec executable="php" dir="${project.basedir}" checkreturn="true" passthru="true">
+            <arg line="bin/phpunit -c app/phpunit.xml.dist" />
+        </exec>
+    </target>
+
+    <target name="build:action:deploy">
+        <tstamp>
+            <format property="TIMESTAMP" pattern="%U" />
+        </tstamp>
+
+        <exec executable="scp" dir="${project.basedir}" checkreturn="true" passthru="true">
+            <arg line=". mvriel@phpdoc.org:/opt/sites/phpdoc.org/${TIMESTAMP}" />
+        </exec>
+        <exec executable="ssh" dir="${project.basedir}" checkreturn="true" passthru="true">
+            <arg line="mvriel@phpdoc.org 'cd /opt/sites/phpdoc.org;mv -fT ${TIMESTAMP} current'" />
+        </exec>
+    </target>
+</project>
