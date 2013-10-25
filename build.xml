@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<project name="phpdoc.org" basedir="." default="build:stage:commit">
+<project name="phpdoc.org" basedir="." default="stage:commit">
 
-    <target name="build:stage:commit"/>
+    <property name="deploy.target" value="staging.phpdoc.org" />
+    <property name="deploy.host" value="phpdoc.org" />
+    <property name="deploy.user" value="mvriel" />
 
-    <target name="build:stage:deploy"/>
+    <target name="stage:commit" depends="build:phpunit" />
 
-    <target name="build:action:phpunit">
+    <target name="stage:deploy" depends="initialize-timestamp, deploy:compress-and-upload,deploy:release" />
+
+    <target name="initialize-timestamp">
+        <tstamp><format property="TIMESTAMP" pattern="%s" /></tstamp>
+    </target>
+
+    <target name="build:phpunit">
         <exec executable="php" dir="${project.basedir}" checkreturn="true" passthru="true">
             <arg line="bin/phpunit -c app/phpunit.xml.dist" />
         </exec>
     </target>
 
-    <target name="build:action:deploy">
-        <tstamp>
-            <format property="TIMESTAMP" pattern="%U" />
-        </tstamp>
-
-        <exec executable="scp" dir="${project.basedir}" checkreturn="true" passthru="true">
-            <arg line=". mvriel@phpdoc.org:/opt/sites/phpdoc.org/${TIMESTAMP}" />
+    <target name="deploy:compress-and-upload" depends="initialize-timestamp">
+        <exec executable="tar" dir="${project.basedir}" checkreturn="true" passthru="true">
+            <arg line="-czf ${TIMESTAMP}.tar.gz *" />
         </exec>
+        <exec executable="scp" dir="${project.basedir}" checkreturn="true" passthru="true">
+            <arg line="${TIMESTAMP}.tar.gz ${deploy.user}@${deploy.host}:/opt/sites/${deploy.target}/${TIMESTAMP}.tar.gz" />
+        </exec>
+    </target>
+
+    <target name="deploy:release" depends="deploy:compress-and-upload">
         <exec executable="ssh" dir="${project.basedir}" checkreturn="true" passthru="true">
-            <arg line="mvriel@phpdoc.org 'cd /opt/sites/phpdoc.org;mv -fT ${TIMESTAMP} current'" />
+            <arg line="${deploy.user}@${deploy.host} 'cd /opt/sites/${deploy.target}; mkdir ${TIMESTAMP}; tar -xzf ${TIMESTAMP}.tar.gz ${TIMESTAMP}/; ln -s ${TIMESTAMP} ${TIMESTAMP}.link; mv -fT ${TIMESTAMP}.link current'" />
         </exec>
     </target>
 </project>
