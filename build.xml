@@ -6,7 +6,7 @@
     <property name="deploy.host" value="phpdoc.org" />
     <property name="deploy.user" value="mvriel" />
 
-    <target name="stage:commit" depends="build:phpunit" />
+    <target name="stage:commit" depends="build:initialize,build:phpunit" />
 
     <target name="stage:deploy" depends="initialize-timestamp, deploy:compress-and-upload,deploy:release" />
 
@@ -14,6 +14,11 @@
         <tstamp><format property="TIMESTAMP" pattern="%s" /></tstamp>
     </target>
 
+    <target name="build:initialize">
+        <exec executable="composer" dir="${project.basedir}" checkreturn="true" passthru="true">
+            <arg line="install --prefer-dist -o" />
+        </exec>
+    </target>
     <target name="build:phpunit">
         <exec executable="php" dir="${project.basedir}" checkreturn="true" passthru="true">
             <arg line="bin/phpunit -c app/phpunit.xml.dist" />
