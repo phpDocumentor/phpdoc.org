@@ -4,7 +4,7 @@
 // Icon fonts
 @import url('http://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css');
 @import url('http://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome-ie7.css');
-@import url(http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Tangerine);
+@import url(http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Tangerine|Duru+Sans);
 
 $background-color: white;
 $highlight-light:  #8dd35f;
@@ -29,10 +29,12 @@ $accent-font-family: 'Roboto';
 }
 
 body {
-  background: url('../images/bg.png');
+  background-image: url('../images/bg.png');
   background-size: 50% auto;
-  font-family: Sans, sans-serif;
+  font-family: 'Duru Sans', Sans, sans-serif;
   color: #333;
+  font-size: 1.0em;
+  line-height: 1.4em;
 
   & > header:first-of-type {
     box-shadow: 0 10px 20px silver;
@@ -68,6 +70,15 @@ a {
   }
 }
 
+.surrounding-space {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+#___ {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 article {
   h1 {
     font-size: 1.4em;
@@ -79,6 +90,12 @@ article {
 
   h2 {
     font-size: 1.5em;
+    color: #666;
+    font-weight: 100;
+  }
+
+  h3 {
+    font-size: 1.4em;
     color: #666;
     font-weight: 100;
   }
@@ -131,8 +148,8 @@ details[open] summary small {
 
 header {
   padding: 10px 0 0 0 ;
-  border-bottom: 1px solid silver;
-  background: $background-color;
+  background: #666;
+  color: white;
   clear: both;
 
   img#logo {
@@ -152,7 +169,7 @@ header {
     h1 {
       display: inline;
       font-size: 1.6em;
-      line-height: 1.5em;
+      line-height: 30px;
       font-family: "Roboto Condensed", sans-serif;
       font-weight: normal;
       margin: 0;
@@ -162,10 +179,6 @@ header {
       margin-top: 2px;
       margin-bottom: 0px;
       padding: 0;
-
-      li.current a {
-        color: $highlight-light;
-      }
     }
 
     &:first-of-type {
@@ -182,13 +195,28 @@ header {
       }
 
       a {
-        color: gray;
+        color: #9ed67c;
       }
 
       ul:first-of-type {
         a {
-          font-size: 1.2em;
+          font-size: 1.1em;
           margin-left: 1em;
+
+          &:hover {
+            background-color: #8cd15f;
+            border-radius: 3px;
+            color: white;
+          }
+        }
+        .current a {
+          cursor: default;
+          color: silver;
+
+          &:hover {
+            color: silver;
+            background: transparent;
+          }
         }
       }
       ul:last-of-type {
@@ -240,7 +268,7 @@ section.header.container-fluid {
       border-radius: 27px;
     }
     h1 {
-      font-size: 1.9em;
+      font-size: 1.8em;
       color: white;
 
       em {
@@ -256,6 +284,7 @@ section.header.container-fluid {
     }
     p {
       line-height: 1.5em;
+      font-size:   0.9em;
     }
     a.button {
       margin: 10px 5px 0px 5px;
@@ -294,9 +323,9 @@ footer {
   padding-top: 30px;
   padding-bottom: 60px;
   background-color: #666;
-  -webkit-box-shadow: inset 0 0 100px #333;
-  -moz-box-shadow: inset 0 0 100px #333;
-  box-shadow: inset 0 0 100px #333;
+  -webkit-box-shadow: inset 0 0 100px #555;
+  -moz-box-shadow: inset 0 0 100px #555;
+  box-shadow: inset 0 0 100px #555;
 
   h1 {
     text-align: left;
@@ -313,9 +342,13 @@ footer {
     text-align: center;
 
     .showcase {
-      height: 60px;
-      line-height: 60px;
-      border: 3px solid #84b56d;
+      height:                60px;
+      line-height:           60px;
+      -moz-border-radius:    3px;
+      -webkit-border-radius: 3px;
+      border-radius:         3px;
+      background-color:      $background-color;
+      padding:               5px;
 
       img {
         max-height: 60px;
@@ -326,9 +359,6 @@ footer {
       font-size: 1.2em;
       padding-top: 15px;
       display: inline-block;
-    }
-    div div {
-      background-color: $background-color;
     }
     .row {
       margin-top: 20px;
@@ -391,10 +421,13 @@ article.content-overview {
 
 section.sponsors {
   figure {
-    background: white;
-    text-align: center;
+    background:  $background-color;
+    text-align:  center;
     margin-left: 0;
-    border: 3px solid #84b56d;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 2px;
   }
   img {
     padding: 5px;
@@ -404,14 +437,12 @@ section.sponsors {
     padding: 5px 10px;
     color: #333;
     font-size: 1.2em;
-    font-style: italic;
   }
 }
 
 .styles-preview {
   background: #a3dc7f;
-  border-top: 2px solid silver;
-  box-shadow: inset 0 0 100px #84b56d;
+  box-shadow: inset 0 0 100px #83D15E;
   margin-top: 40px;
 
   h1 {
@@ -430,13 +461,95 @@ section.sponsors {
     padding-bottom: 40px;
   }
   #carousel img {
+    height: 120px;
+    width: 220px;
     margin: 0 10px;
-    max-height: 120px;
-    border: 3px solid #5aa02b;
-    padding: 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
   }
 }
+
+section h1 .headerlink,
+section h2 .headerlink,
+section h3 .headerlink,
+section h4 .headerlink,
+section h5 .headerlink,
+section h6 .headerlink {
+  visibility: hidden;
+}
+
+section h1:hover .headerlink,
+section h2:hover .headerlink,
+section h3:hover .headerlink,
+section h4:hover .headerlink,
+section h5:hover .headerlink,
+section h6:hover .headerlink {
+  visibility: visible;
+}
+
+.admonition {
+  background: #444;
+  padding: 10px;
+  margin: 40px 20px 20px 20px;
+  color: white;
+
+  .admonition-title {
+    display: none;
+  }
+
+  &.warning:before {
+    content: "\f071";
+    width: 43px;
+    height: 52px;
+    border-radius: 26px;
+    background: #444;
+    position: relative;
+    display: block;
+    color: orange;
+    margin-top: -20px;
+    margin-left: -20px;
+    line-height: 50px;
+    font-family: FontAwesome;
+    font-size: 32px;
+    padding-left: 9px;
+  }
+
+  &.important:before {
+    content: "\f06d";
+    width: 39px;
+    height: 52px;
+    border-radius: 26px;
+    background: #444;
+    position: relative;
+    display: block;
+    color: orangered;
+    margin-top: -20px;
+    margin-left: -20px;
+    line-height: 50px;
+    font-family: FontAwesome;
+    font-size: 32px;
+    padding-left: 13px;
+  }
+
+  &.note:before {
+    content: "\f02e";
+    width: 39px;
+    height: 52px;
+    border-radius: 26px;
+    background: #444;
+    position: relative;
+    display: block;
+    color: greenyellow;
+    margin-top: -20px;
+    margin-left: -20px;
+    line-height: 50px;
+    font-family: FontAwesome;
+    font-size: 32px;
+    padding-left: 13px;
+  }
+}
+
 
 @media screen and (max-width: 767px) {
     body {

@@ -2,6 +2,16 @@ _welcome:
     pattern:  /
     defaults: { _controller: phpDocumentorWebsiteBundle:Default:index }
 
+docsRoot:
+    path:  /docs/{version}
+    defaults: { _controller: phpDocumentorWebsiteBundle:Default:docs, location: '' }
+
+docs:
+    path:  /docs/{version}/{location}
+    defaults: { _controller: phpDocumentorWebsiteBundle:Default:docs }
+    requirements:
+      location: .+
+
 phpDocumentorWebsiteBundle:
     resource: "@phpDocumentorWebsiteBundle/Controller/"
     type:     annotation

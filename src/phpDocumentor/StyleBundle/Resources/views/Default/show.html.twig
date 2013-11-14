@@ -43,24 +43,29 @@
 
   </style>
 
-  <div id="template_show_sidebar" style="position: absolute; right: 0px; height: 600px; width: 300px; background: white; display: none; border-left: 1px solid silver; padding: 10px;">
-    <h3>{{ template.name }}</h3>
-    <p>{{ template.description}}</p>
-    <h3>Installation</h3>
-    To install, use the following phpdoc command:<br />
-    <pre><code>phpdoc template:install {{ template.slug }}</code></pre>
-    <br />
-    If you haven't installed phpDocumentor via PEAR then you must supply which version that
-    you'd like to install using a second argument.
-    <pre><code>phpdoc template:install {{ template.slug }} -v 1.0.0</code></pre>
-    <h3>Usage</h3>
-    To use this template, use the following phpdoc command:<br />
-    <pre><code>phpdoc -d [SRC] -t [DEST] --template {{ template.slug }}</code></pre>
-    <h3>Versions</h3>
-    <ul>
-      <li>1.0.0</li>
-    </ul>
-  </div>
-  <img id="template_show_image" src="{{ asset('bundles/phpdocumentortemplate/images/screenshots/'~template.slug~'.png') }}" alt="{{ template.name }}" width="100%" title="Click to close">
+<section class="row surrounding-space">
+    <section class="span12">
 
+      <div id="template_show_sidebar" style="position: absolute; right: 0px; height: 600px; width: 300px; background: white; display: none; border-left: 1px solid silver; padding: 10px;">
+        <h3>{{ template.name }}</h3>
+        <p>{{ template.description}}</p>
+        <h3>Installation</h3>
+        To install, use the following phpdoc command:<br />
+        <pre><code>phpdoc template:install {{ template.slug }}</code></pre>
+        <br />
+        If you haven't installed phpDocumentor via PEAR then you must supply which version that
+        you'd like to install using a second argument.
+        <pre><code>phpdoc template:install {{ template.slug }} -v 1.0.0</code></pre>
+        <h3>Usage</h3>
+        To use this template, use the following phpdoc command:<br />
+        <pre><code>phpdoc -d [SRC] -t [DEST] --template {{ template.slug }}</code></pre>
+        <h3>Versions</h3>
+        <ul>
+          <li>1.0.0</li>
+        </ul>
+      </div>
+      <img id="template_show_image" src="{{ asset('bundles/phpdocumentortemplate/images/screenshots/'~template.slug~'.png') }}" alt="{{ template.name }}" width="100%" title="Click to close">
+
+    </section>
+</section>
 {% endblock %}

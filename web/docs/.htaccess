@@ -1,7 +1,0 @@
-RewriteEngine off
-
-#ErrorDocument 503 "Our website is temporarily closed for maintenance. It should reopen before March 22, 1200 GMT"
-#RewriteEngine On
-# TO ALLOW YOURSELF TO VISIT THE SITE, CHANGE 111 222 333 444 TO YOUR IP ADDRESS. 
-#RewriteCond %{REMOTE_ADDR} !^111\.222\.333\.444$
-#RewriteRule .* - [R=503,L]

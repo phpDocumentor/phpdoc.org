@@ -12,6 +12,13 @@ node default {
   }
 
   package {'git': }
+  package {["python-setuptools", "make", "texlive-latex-recommended", "texlive-fonts-recommended", "openjdk-6-jre"] : }
+
+  exec { "sudo easy_install -U sphinx":
+    command => "/usr/bin/sudo /usr/bin/easy_install -U sphinx",
+    require => [ Package["python-setuptools"] ],
+    timeout => 0
+  }
 
   php::module { "mysql" : }
   php::module { "gd" : }
@@ -25,6 +32,11 @@ node default {
     enable      => false
   }
 
+    package { "compass":
+        provider => "gem",
+        ensure => installed,
+    }
+
   file {'/var/www/phpdoc.org':
     ensure => link,
     target => "/vagrant/web"
@@ -35,5 +47,13 @@ node default {
     server_name => 'dev.www.phpdoc.org',
     priority => 10,
     require => File['/var/www/phpdoc.org']
+  }
+
+  mysql::grant { 'phpdoc':
+    mysql_privileges => 'ALL',
+    mysql_password   => 'phpdoc',
+    mysql_db         => 'phpdoc',
+    mysql_user       => 'phpdoc',
+    mysql_host       => 'localhost'
   }
 }
