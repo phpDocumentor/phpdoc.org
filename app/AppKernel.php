@@ -21,7 +21,6 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new phpDocumentor\ResourceBundle\phpDocumentorResourceBundle(),
             new phpDocumentor\StyleBundle\phpDocumentorStyleBundle(),
             new phpDocumentor\WebsiteBundle\phpDocumentorWebsiteBundle(),
         );

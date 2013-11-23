@@ -46,7 +46,7 @@
 
     <target name="deploy:release" depends="deploy:compress-and-upload">
         <exec executable="ssh" dir="${project.basedir}" checkreturn="true" passthru="true">
-            <arg line="${deploy.user}@${deploy.host} 'cd /opt/sites/${deploy.target}; mkdir ${TIMESTAMP}; tar -xzf ${TIMESTAMP}.tar.gz ${TIMESTAMP}/; ln -s ${TIMESTAMP} ${TIMESTAMP}.link; mv -fT ${TIMESTAMP}.link current'" />
+            <arg line="${deploy.user}@${deploy.host} 'cd /opt/sites/${deploy.target}; mkdir ${TIMESTAMP}; cd ${TIMESTAMP}; mv ../${TIMESTAMP}.tar.gz .; tar -xzf ${TIMESTAMP}.tar.gz; ln -s ${TIMESTAMP} ${TIMESTAMP}.link; mv -fT ${TIMESTAMP}.link current'" />
         </exec>
     </target>
 </project>

@@ -1,8 +1,8 @@
 vendor
+.idea
 app/config/parameters.ini
 app/bootstrap.php.cache
 app/Resources/docs
-.idea
 web/docs/1.4
 web/docs/2.0
 web/docs/latest

@@ -64,4 +64,4 @@ jms_security_extra:
 fos_user:
     db_driver:     orm
     firewall_name: main
-    user_class:    phpDocumentor\ResourceBundle\Entity\User
+    user_class:    phpDocumentor\WebsiteBundle\Entity\User
