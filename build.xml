@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <project name="phpdoc.org" basedir="." default="stage:commit">
-
-    <property name="deploy.target" value="staging.phpdoc.org" />
-    <property name="deploy.host" value="phpdoc.org" />
-    <property name="deploy.user" value="mvriel" />
+    <property file="build.properties"/>
 
     <target name="stage:commit" depends="build:initialize,build:phpunit,build:phpcs" />
 
@@ -46,7 +43,7 @@
 
     <target name="deploy:release" depends="deploy:compress-and-upload">
         <exec executable="ssh" dir="${project.basedir}" checkreturn="true" passthru="true">
-            <arg line="${deploy.user}@${deploy.host} 'cd /opt/sites/${deploy.target}; mkdir ${TIMESTAMP}; cd ${TIMESTAMP}; mv ../${TIMESTAMP}.tar.gz .; tar -xzf ${TIMESTAMP}.tar.gz; cd ..; ln -s ${TIMESTAMP} ${TIMESTAMP}.link; mv -fT ${TIMESTAMP}.link current; ./current/app/console clear:cache --env=prod'" />
+            <arg line="${deploy.user}@${deploy.host} 'cd /opt/sites/${deploy.target}; mkdir ${TIMESTAMP}; cd ${TIMESTAMP}; mv ../${TIMESTAMP}.tar.gz .; tar -xzf ${TIMESTAMP}.tar.gz; cd ..; ln -s ${TIMESTAMP} ${TIMESTAMP}.link; mv -fT ${TIMESTAMP}.link current; ./current/app/console cache:clear --env=prod'" />
         </exec>
     </target>
 </project>

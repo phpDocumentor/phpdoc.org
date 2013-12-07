@@ -14,3 +14,4 @@ app/cache
 .vagrant
 composer.phar
 docs/src
+build.properties

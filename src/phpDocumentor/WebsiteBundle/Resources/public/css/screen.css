@@ -44,38 +44,39 @@ section h6:hover .headerlink {
   background: white;
   border: 1px solid #e0e0e0;
   border-top-left-radius: 10px;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 10px;
   border-bottom-left-radius: 10px;
 }
-/* line 42, ../../scss/partials/_docs.scss */
+/* line 43, ../../scss/partials/_docs.scss */
 .container > .row > .sidebar h3 {
   font-size: 1.3em;
   margin-top: 0px;
 }
-/* line 45, ../../scss/partials/_docs.scss */
+/* line 46, ../../scss/partials/_docs.scss */
 .container > .row > .sidebar h3 a {
   color: #666666;
 }
-/* line 49, ../../scss/partials/_docs.scss */
+/* line 50, ../../scss/partials/_docs.scss */
 .container > .row > .sidebar ul {
   font-size: 0.95em;
   list-style: none;
   margin-left: 15px;
   margin-top: 5px;
 }
-/* line 55, ../../scss/partials/_docs.scss */
+/* line 56, ../../scss/partials/_docs.scss */
 .container > .row > .sidebar ul li {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-/* line 60, ../../scss/partials/_docs.scss */
+/* line 61, ../../scss/partials/_docs.scss */
 .container > .row > .sidebar > ul {
   margin-left: 0;
   margin-top: 0;
 }
 
-/* line 66, ../../scss/partials/_docs.scss */
+/* line 67, ../../scss/partials/_docs.scss */
 .admonition {
   background: #444;
   padding: 10px;
@@ -83,15 +84,15 @@ section h6:hover .headerlink {
   color: white;
   border-radius: 5px;
 }
-/* line 73, ../../scss/partials/_docs.scss */
+/* line 74, ../../scss/partials/_docs.scss */
 .admonition .admonition-title {
   display: none;
 }
-/* line 77, ../../scss/partials/_docs.scss */
+/* line 78, ../../scss/partials/_docs.scss */
 .admonition a, .admonition a em {
   color: #8dd35f;
 }
-/* line 80, ../../scss/partials/_docs.scss */
+/* line 81, ../../scss/partials/_docs.scss */
 .admonition.warning:before {
   content: "\f071";
   width: 43px;
@@ -108,7 +109,7 @@ section h6:hover .headerlink {
   font-size: 32px;
   padding-left: 9px;
 }
-/* line 97, ../../scss/partials/_docs.scss */
+/* line 98, ../../scss/partials/_docs.scss */
 .admonition.important:before {
   content: "\f06d";
   width: 39px;
@@ -125,7 +126,7 @@ section h6:hover .headerlink {
   font-size: 32px;
   padding-left: 13px;
 }
-/* line 114, ../../scss/partials/_docs.scss */
+/* line 115, ../../scss/partials/_docs.scss */
 .admonition.note:before {
   content: "\f02e";
   width: 39px;
@@ -142,7 +143,7 @@ section h6:hover .headerlink {
   font-size: 32px;
   padding-left: 13px;
 }
-/* line 130, ../../scss/partials/_docs.scss */
+/* line 131, ../../scss/partials/_docs.scss */
 .admonition.hint:before {
   content: "\f0eb";
   width: 36px;
