@@ -18,7 +18,7 @@
         <mkdir dir="build" />
         <mkdir dir="build/logs" />
         <exec executable="composer" dir="${project.basedir}" checkreturn="true" passthru="true">
-            <arg line="install --prefer-dist -o" />
+            <arg line="install --prefer-source -o" />
         </exec>
     </target>
     <target name="build:phpunit">
