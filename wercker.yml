@@ -1,0 +1,10 @@
+box: wercker/php
+build:
+  steps:
+    - script:
+        name: install dependencies
+        code: |-
+            composer install --no-interaction
+    - script:
+        name: unit tests
+        code: phpunit --configuration app/
