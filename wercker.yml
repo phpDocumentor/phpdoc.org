@@ -6,5 +6,8 @@ build:
         code: |-
             composer install --no-interaction
     - script:
+        name: setup log and cache folder
+        code: mkdir /var/log/phpdoc.org; chmod 777 /var/log/phpdoc.org; mkdir /tmp/phpdoc.org; chmod 777 /tmp/phpdoc.org
+    - script:
         name: unit tests
         code: phpunit --configuration app/
