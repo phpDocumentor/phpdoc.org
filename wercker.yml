@@ -3,7 +3,7 @@ build:
   steps:
     - script:
         name: setup log and cache folder
-        code: mkdir /var/log/phpdoc.org; chmod 777 /var/log/phpdoc.org; mkdir /tmp/phpdoc.org; chmod 777 /tmp/phpdoc.org
+        code: sudo mkdir /var/log/phpdoc.org; sudo chmod 777 /var/log/phpdoc.org; sudo mkdir /tmp/phpdoc.org; sudo chmod 777 /tmp/phpdoc.org
     - script:
         name: install dependencies
         code: |-
