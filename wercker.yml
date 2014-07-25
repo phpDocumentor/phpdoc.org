@@ -14,7 +14,15 @@ build:
 
 deploy:
   steps:
-    - johnhamelink/ansible-install
+    - script:
+        name: install python setuptools
+        code: $ sudo apt-get install python-setuptools
+    - script:
+        name: install pip
+        code: sudo easy_install pip
+    - script:
+        name: install ansible
+        code: sudo pip install ansible
     - add-to-known_hosts:
         hostname: staging.phpdoc.org
     - add-to-known_hosts:
