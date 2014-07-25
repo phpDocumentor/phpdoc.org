@@ -16,15 +16,25 @@ deploy:
   steps:
     - johnhamelink/ansible-install
     - add-to-known_hosts:
-        hostname: YOURSERVER.COM
+        hostname: staging.phpdoc.org
+    - add-to-known_hosts:
+        hostname: phpdoc.org
     - mktemp:
         envvar: PRIVATEKEY_PATH
     - create-file:
-        name: write key
+        name: Write private key to file
         filename: $PRIVATEKEY_PATH
         content: $DEPLOY_KEY_PRIVATE
         overwrite: true
         hide-from-log: true
+    - mktemp:
+        envvar: INVENTORY_PATH
+    - create-file:
+        name: Generate ansible inventory
+        filename: $INVENTORY_PATH
+        content: $HOSTS
+        overwrite: true
+        hide-from-log: true
     - script:
         name: Run ansible
-        code: ansible-playbook ansible/playbook.yml --private-key=$PRIVATEKEY_PATH --extra-vars "project_dir=$WERCKER_SOURCE_DIR releases_dir=$RELEASES_DIR"
+        code: ansible-playbook ansible/playbook.yml all -i $INVENTORY_PATH --private-key=$PRIVATEKEY_PATH --extra-vars "project_dir=$WERCKER_SOURCE_DIR releases_dir=$RELEASES_DIR"
