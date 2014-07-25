@@ -16,7 +16,7 @@ deploy:
   steps:
     - script:
         name: install python setuptools
-        code: $ sudo apt-get install python-setuptools
+        code: sudo apt-get install python-setuptools
     - script:
         name: install pip
         code: sudo easy_install pip
