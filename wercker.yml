@@ -15,11 +15,8 @@ build:
 deploy:
   steps:
     - script:
-        name: install python setuptools
-        code: sudo apt-get install python-setuptools
-    - script:
-        name: install pip
-        code: sudo easy_install pip
+        name: install python pip
+        code: sudo apt-get install python-pip
     - script:
         name: install ansible
         code: sudo pip install ansible
