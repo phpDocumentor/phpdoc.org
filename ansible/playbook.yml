@@ -1,0 +1,7 @@
+---
+- hosts: staging.phpdoc.org
+  roles:
+#    - { role: phpdocumentor.vagrant, tags: [vagrant] }
+#    - { role: phpdocumentor.environment, tags: [vagrant] }
+#    - { role: phpdocumentor.php, tags: [vagrant] }
+    - { role: phpdocumentor.website.deploy, tags: [deploy] }

@@ -11,3 +11,20 @@ build:
     - script:
         name: unit tests
         code: phpunit --configuration app/
+
+deploy:
+  steps:
+    - johnhamelink/ansible-install
+    - add-to-known_hosts:
+        hostname: YOURSERVER.COM
+    - mktemp:
+        envvar: PRIVATEKEY_PATH
+    - create-file:
+        name: write key
+        filename: $PRIVATEKEY_PATH
+        content: $DEPLOY_KEY_PRIVATE
+        overwrite: true
+        hide-from-log: true
+    - script:
+        name: Run ansible
+        code: ansible-playbook ansible/playbook.yml --private-key=$PRIVATEKEY_PATH --extra-vars "project_dir=$WERCKER_SOURCE_DIR releases_dir=$RELEASES_DIR"

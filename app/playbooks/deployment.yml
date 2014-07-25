@@ -1,0 +1,9 @@
+---
+- hosts: staging.phpdoc.org
+  tasks:
+    - name: Create new timestamped folder
+    - name: Git clone the latest version into the folder
+    - name: Run composer install
+    - name: Publish assets
+    - name: Import documentation source
+    - name: Generate documentation
