@@ -15,6 +15,9 @@ build:
 deploy:
   steps:
     - script:
+        name: Update apt
+        code: sudo apt-get update
+    - script:
         name: install python pip
         code: sudo apt-get install python-pip
     - script:
