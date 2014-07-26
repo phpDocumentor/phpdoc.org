@@ -45,4 +45,4 @@ deploy:
         hide-from-log: true
     - script:
         name: Run ansible
-        code: ansible-playbook ansible/playbook.yml all -i $INVENTORY_PATH --private-key=$PRIVATEKEY_PATH --extra-vars "project_dir=$WERCKER_SOURCE_DIR releases_dir=$RELEASES_DIR"
+        code: ansible-playbook ansible/playbook.yml -i $INVENTORY_PATH --private-key=$PRIVATEKEY_PATH --extra-vars "project_dir=$WERCKER_SOURCE_DIR releases_dir=$RELEASES_DIR"
