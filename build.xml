@@ -5,12 +5,6 @@
 
     <target name="stage:commit" depends="build:initialize,build:phpunit,build:phpcs" />
 
-    <target name="stage:deploy" depends="initialize-timestamp, deploy:compress-and-upload,deploy:release" />
-
-    <target name="initialize-timestamp">
-        <tstamp><format property="TIMESTAMP" pattern="%s" /></tstamp>
-    </target>
-
     <target name="build:initialize">
         <exec executable="rm" dir="${project.basedir}" checkreturn="false" passthru="true">
             <arg line="-rf build" />
@@ -21,29 +15,16 @@
             <arg line="install --prefer-source -o" />
         </exec>
     </target>
+
     <target name="build:phpunit">
         <exec executable="php" dir="${project.basedir}" checkreturn="true" passthru="true">
             <arg line="bin/phpunit -c app/phpunit.xml.dist" />
         </exec>
     </target>
+
     <target name="build:phpcs">
         <exec executable="phpcs" dir="${project.basedir}" checkreturn="false" passthru="true">
             <arg line="--report=checkstyle --report-file=${project.basedir}/build/logs/checkstyle.xml --standard=PSR2 ${project.basedir}/src" />
-        </exec>
-    </target>
-
-    <target name="deploy:compress-and-upload" depends="initialize-timestamp">
-        <exec executable="tar" dir="${project.basedir}" checkreturn="true" passthru="true">
-            <arg line="-czf ${TIMESTAMP}.tar.gz *" />
-        </exec>
-        <exec executable="scp" dir="${project.basedir}" checkreturn="true" passthru="true">
-            <arg line="${TIMESTAMP}.tar.gz ${deploy.user}@${deploy.host}:/opt/sites/${deploy.target}/${TIMESTAMP}.tar.gz" />
-        </exec>
-    </target>
-
-    <target name="deploy:release" depends="deploy:compress-and-upload">
-        <exec executable="ssh" dir="${project.basedir}" checkreturn="true" passthru="true">
-            <arg line="${deploy.user}@${deploy.host} 'cd /opt/sites/${deploy.target}; mkdir ${TIMESTAMP}; cd ${TIMESTAMP}; mv ../${TIMESTAMP}.tar.gz .; tar -xzf ${TIMESTAMP}.tar.gz; cd ..; ln -s ${TIMESTAMP} ${TIMESTAMP}.link; mv -fT ${TIMESTAMP}.link current; ./current/app/console cache:clear --env=prod'" />
         </exec>
     </target>
 </project>
