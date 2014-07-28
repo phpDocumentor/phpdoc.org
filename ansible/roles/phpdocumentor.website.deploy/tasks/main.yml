@@ -16,10 +16,10 @@
     path={{ release_path.stdout }}
 
 - name: Copy release
-  synchronize: src={{ project_dir }} dest={{ release_path.stdout }} rsync_opts=--no-motd,-C,--exclude=ansible,--exclude=puppet,--exclude=design
+  synchronize: src={{ project_dir }}/ dest={{ release_path.stdout }} rsync_opts=--no-motd,-C,--exclude=ansible,--exclude=puppet,--exclude=design
 
-#- name: Update app version
-#  file: >
-#    state=link
-#    path={{ releases_dir }}/test
-#    src={{ release_path.stdout }}
+- name: Update app version
+  file: >
+    state=link
+    path={{ releases_dir }}/current
+    src={{ release_path.stdout }}
