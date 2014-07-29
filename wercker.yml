@@ -19,7 +19,10 @@ deploy:
         code: sudo apt-get update
     - script:
         name: install python pip
-        code: sudo apt-get install python-pip
+        code: sudo apt-get install setuptools python-pip
+    - script:
+        name: install sphinx-doc
+        code: sudo easy_install -U sphinx
     - script:
         name: install ansible
         code: sudo pip install ansible
@@ -27,14 +30,8 @@ deploy:
         hostname: staging.phpdoc.org
     - add-to-known_hosts:
         hostname: phpdoc.org
-    - mktemp:
-        envvar: PRIVATEKEY_PATH
-    - create-file:
-        name: Write private key to file
-        filename: $PRIVATEKEY_PATH
-        content: $DEPLOY_KEY_PRIVATE
-        overwrite: true
-        hide-from-log: true
+    - wercker/add-ssh-key:
+        keyname: DEPLOY_KEY
     - mktemp:
         envvar: INVENTORY_PATH
     - create-file:
