@@ -30,8 +30,14 @@ deploy:
         hostname: staging.phpdoc.org
     - add-to-known_hosts:
         hostname: phpdoc.org
-    - wercker/add-ssh-key:
-        keyname: DEPLOY_KEY
+    - mktemp:
+        envvar: PRIVATEKEY_PATH
+    - create-file:
+        name: Write private key to file
+        filename: $PRIVATEKEY_PATH
+        content: $DEPLOY_KEY_PRIVATE
+        overwrite: true
+        hide-from-log: true
     - mktemp:
         envvar: INVENTORY_PATH
     - create-file:
