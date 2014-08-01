@@ -61,5 +61,13 @@ deploy:
         cwd: app/Resources
         code: mkdir docs; cd docs; ln -s ../../../docs/src/.build/html latest
     - script:
+        name: Create symlink to generated phar files
+        cwd: web
+        code: ln -s $PHAR_ARTIFACTS_PATH get
+    - script:
+        name: Create symlink to latest phar file
+        cwd: web
+        code: ln -s phpDocumentor.phar get/phpDocumentor-latest.phar
+    - script:
         name: Run ansible
         code: ansible-playbook ansible/playbook.yml -i $INVENTORY_PATH -u mvriel --private-key=$PRIVATEKEY_PATH --extra-vars "project_dir=$WERCKER_SOURCE_DIR releases_dir=$RELEASES_DIR"
