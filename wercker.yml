@@ -57,5 +57,9 @@ deploy:
         cwd: docs/src
         code: make barehtml
     - script:
+        name: Create symlink to generated docs
+        cwd: app/Resources
+        code: mkdir docs; ln -s ../../../docs/src/.build/html latest
+    - script:
         name: Run ansible
         code: ansible-playbook ansible/playbook.yml -i $INVENTORY_PATH -u mvriel --private-key=$PRIVATEKEY_PATH --extra-vars "project_dir=$WERCKER_SOURCE_DIR releases_dir=$RELEASES_DIR"
