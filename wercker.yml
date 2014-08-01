@@ -50,8 +50,8 @@ deploy:
         overwrite: true
         hide-from-log: true
     - script:
-        name: Test folder output
-        code: ls
+        name: Retrieve documentation sources
+        code: ./bin/get-docs.sh
     - script:
         name: Generate docs
         cwd: docs/src
