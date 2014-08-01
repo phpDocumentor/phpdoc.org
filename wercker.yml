@@ -50,8 +50,11 @@ deploy:
         overwrite: true
         hide-from-log: true
     - script:
+        name: Test folder output
+        code: ls
+    - script:
         name: Generate docs
-        cwd: docs
+        cwd: docs/src
         code: make barehtml
     - script:
         name: Run ansible
