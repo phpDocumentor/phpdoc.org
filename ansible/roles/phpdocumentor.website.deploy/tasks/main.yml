@@ -16,7 +16,7 @@
     path={{ release_path.stdout }}
 
 - name: Copy release
-  synchronize: src={{ project_dir }}/ dest={{ release_path.stdout }} rsync_opts=--no-motd,-C,--exclude=ansible,--exclude=puppet,--exclude=design
+  synchronize: src={{ project_dir }}/ dest={{ release_path.stdout }} rsync_opts=--no-motd,--exclude=ansible,--exclude=.git,--exclude=puppet,--exclude=design
 
 - name: Update app version
   file: >
