@@ -22,7 +22,7 @@ deploy:
         code: sudo apt-get update
     - script:
         name: install python easy_install and pip
-        code: sudo apt-get install python-setuptools python-pip make
+        code: sudo apt-get install python-setuptools python-pip make subversion
     - script:
         name: install sphinx-doc
         code: sudo easy_install -U sphinx
