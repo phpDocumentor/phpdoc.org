@@ -48,7 +48,7 @@ deploy:
         hide-from-log: true
     - script:
         name: Generate docs
-        cwd: docs/
+        cwd: docs
         code: make barehtml
     - script:
         name: Run ansible
