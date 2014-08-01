@@ -19,7 +19,7 @@ deploy:
         code: sudo apt-get update
     - script:
         name: install python easy_install and pip
-        code: sudo apt-get install python-setuptools python-pip
+        code: sudo apt-get install python-setuptools python-pip make
     - script:
         name: install sphinx-doc
         code: sudo easy_install -U sphinx
@@ -46,6 +46,10 @@ deploy:
         content: $HOSTS
         overwrite: true
         hide-from-log: true
+    - script:
+        name: Generate docs
+        cwd: docs/
+        code: make barehtml
     - script:
         name: Run ansible
         code: ansible-playbook ansible/playbook.yml -i $INVENTORY_PATH -u mvriel --private-key=$PRIVATEKEY_PATH --extra-vars "project_dir=$WERCKER_SOURCE_DIR releases_dir=$RELEASES_DIR"
