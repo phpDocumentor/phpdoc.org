@@ -1,0 +1,13 @@
+phpdoc:
+  container_name: phpdoc
+  build: .
+  environment:
+    SYMFONY_DEBUG: "true"
+    SYMFONY_ENV: "dev"
+    SYMFONY__KERNEL__CACHE_DIR: "/tmp/cache"
+    SYMFONY__KERNEL__LOGS_DIR: "/tmp/logs"
+  volumes:
+      - /opt/webapp
+      - ./docker/vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./docker/development:/etc/apache2/sites-available/development.override
+  ports: [ "8000:80" ]
