@@ -41,11 +41,19 @@ class AppKernel extends Kernel
 
     public function getCacheDir()
     {
-        return '/tmp/phpdoc.org/' . $this->environment;
+        if (getenv('SYMFONY__KERNEL__CACHE_DIR') !== false) {
+            return getenv('SYMFONY__KERNEL__CACHE_DIR') . DIRECTORY_SEPARATOR . $this->getEnvironment();
+        }
+
+        return dirname(__DIR__) . '/var/cache/' . $this->getEnvironment();
     }
 
     public function getLogDir()
     {
-        return '/var/log/phpdoc.org/' . $this->environment;
+        if (getenv('SYMFONY__KERNEL__LOGS_DIR') !== false) {
+            return getenv('SYMFONY__KERNEL__LOGS_DIR');
+        }
+
+        return dirname(__DIR__) . '/var/log';
     }
 }
