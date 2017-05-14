@@ -1,15 +1,15 @@
 parameters:
-    database_driver:   '%phpdoc.database_driver%'
-    database_host:     '%phpdoc.database_host%'
-    database_port:     '%phpdoc.database_port%'
-    database_name:     '%phpdoc.database_name%'
-    database_user:     '%phpdoc.database_user%'
-    database_password: '%phpdoc.database_password'
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: ~
+    database_name: phpdoc
+    database_user: root
+    database_password: ~
 
-    mailer_transport:  smtp
-    mailer_host:       127.0.0.1
-    mailer_user:       ~
-    mailer_password:   ~
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: ~
+    mailer_password: ~
 
-    locale:            en
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt

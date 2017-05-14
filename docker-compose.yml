@@ -1,7 +1,6 @@
 phpdoc:
   container_name: phpdoc
   build: .
-  env_file: [".env"]
   environment:
     SYMFONY_DEBUG: "true"
     SYMFONY_ENV: "dev"
@@ -12,11 +11,3 @@ phpdoc:
       - ./docker/vhost.conf:/etc/apache2/sites-available/000-default.conf
       - ./docker/development:/etc/apache2/sites-available/development.override
   ports: [ "8000:80" ]
-  links:
-    - database
-
-database:
-    image: mysql
-    ports:
-      - "3306:3306"
-    env_file: [".env"]
