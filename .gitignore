@@ -15,3 +15,4 @@ app/cache
 composer.phar
 docs/src
 build.properties
+var
