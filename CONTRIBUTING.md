@@ -14,6 +14,8 @@ Make sure you add the following to your /etc/hosts file
 
 Then, from the project root run 
 
+    composer install
+    
     docker-compose up -d
 
 The website will be available at 
