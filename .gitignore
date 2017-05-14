@@ -15,4 +15,7 @@ app/cache
 composer.phar
 docs/src
 build.properties
-var
+var/cache/*
+var/log/*
+!var/cache/.gitkeep
+!var/log/.gitkeep

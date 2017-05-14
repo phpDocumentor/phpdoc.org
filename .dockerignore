@@ -4,11 +4,16 @@ bin
 build
 docker
 !docker/vhost.conf
+docs
+!docs/src/.build
 puppet
 src/phpDocumentor/*/Tests/**
 var/cache/*
 var/log/*
+var/cache/.gitkeep
+var/log/.gitkeep
 web/app_dev.php
+.*
 build.xml
 docker-compose.yml
 composer.*
@@ -16,6 +21,3 @@ LICENSE
 README.md
 Vagrantfile
 wercker.yml
-.*
-docs
-!docs/src/.build
