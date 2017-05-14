@@ -1,6 +1,6 @@
 vendor
 .idea
-app/config/parameters.ini
+app/config/parameters.yml
 app/bootstrap.php.cache
 app/Resources/docs
 web/docs/1.4

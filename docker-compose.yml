@@ -1,6 +1,7 @@
 phpdoc:
   container_name: phpdoc
-  image: phpdoc:latest
+  build: .
+  env_file: [".env"]
   environment:
     SYMFONY_DEBUG: "true"
     SYMFONY_ENV: "dev"
@@ -10,17 +11,12 @@ phpdoc:
       - /opt/webapp
       - ./docker/vhost.conf:/etc/apache2/sites-available/000-default.conf
       - ./docker/development:/etc/apache2/sites-available/development.override
-  working_dir: "/opt/webapp"
   ports: [ "8000:80" ]
   links:
-    - mysql
+    - database
 
-mysql:
+database:
     image: mysql
     ports:
       - "3306:3306"
-    environment:
-      - MYSQL_DATABASE=phpdoc
-      - MYSQL_USER=phpdoc
-      - MYSQL_PASSWORD=phpdoc
-      - MYSQL_ROOT_PASSWORD=phpdoc
+    env_file: [".env"]
