@@ -16,7 +16,6 @@ web/app_dev.php
 .*
 build.xml
 docker-compose.yml
-composer.*
 LICENSE
 README.md
 Vagrantfile

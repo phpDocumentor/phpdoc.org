@@ -7,7 +7,12 @@ RUN apt-get update \
     && docker-php-ext-install -j$(nproc) intl gmp curl sockets bcmath pdo_mysql \
     && a2enmod rewrite
 
+RUN curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
+
 WORKDIR /opt/webapp
 
 ADD docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 ADD . /opt/webapp
+
+RUN cd /opt/webapp && composer install
