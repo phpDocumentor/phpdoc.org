@@ -13,8 +13,6 @@ Make sure you add the following to your /etc/hosts file
     127.0.0.1 dev.phpdoc.org
 
 Then, from the project root run 
-
-    composer install
     
     docker-compose up -d
 
