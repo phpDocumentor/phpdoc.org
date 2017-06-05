@@ -16,6 +16,8 @@ COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 COPY . /opt/webapp
 
 RUN cd /opt/webapp \
+    && mkdir /tmp/cache /tmp/logs \
+    && chown www-data:www-data /tmp/cache /tmp/logs \
     && composer install --no-dev -o \
     && rm /usr/local/bin/composer \
     && rm -rf ~/.composer
