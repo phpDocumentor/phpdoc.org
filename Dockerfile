@@ -17,5 +17,5 @@ COPY . /opt/webapp
 
 RUN cd /opt/webapp \
     && composer install --no-dev -o \
-    && rm /usr/local/bin/composer
+    && rm /usr/local/bin/composer \
     && rm -rf ~/.composer
