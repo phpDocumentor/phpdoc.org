@@ -1,0 +1,20 @@
+[
+    {
+        "name": "phpDocumentor.phar",
+        "sha1": "cd8419429e2f131f5f2062f2fc4840bd07bc08a0",
+        "url": "http://phpdoc.org/archive/phpDocumentor-2.6.0.phar",
+        "version": "2.6.0"
+    },
+    {
+        "name": "phpDocumentor.phar",
+        "sha1": "27acfa7eac33d062babf32ca6d0de381e6d3a3e5",
+        "url": "http://phpdoc.org/archive/phpDocumentor-2.8.0.phar",
+        "version": "2.8.0"
+    },
+    {
+        "name": "phpDocumentor.phar",
+        "sha1": "f3fe8784ac4d72428da12303ab7199419da4cb80",
+        "url": "http://phpdoc.org/archive/phpDocumentor-2.8.1.phar",
+        "version": "2.8.1"
+    }
+]
