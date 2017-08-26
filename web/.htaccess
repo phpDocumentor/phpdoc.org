@@ -1,4 +1,6 @@
 AddType application/octet-stream .phar
+Redirect 302 /docs https://docs.phpdoc.org
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
