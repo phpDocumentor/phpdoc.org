@@ -17,8 +17,9 @@ COPY . /opt/webapp
 
 RUN cd /opt/webapp \
     && mkdir /tmp/cache /tmp/logs \
-    && chmod -R 777 /opt/webapp/var/*
-    && chown www-data:www-data /tmp/cache /tmp/logs \
+    && chmod -R 777 /opt/webapp/var/* \
+    && chown -R www-data:www-data /tmp/cache /tmp/logs \
     && composer install --no-dev -o \
     && rm /usr/local/bin/composer \
-    && rm -rf ~/.composer
+    && rm -rf ~/.composer \
+    && chown -R www-data:www-data /opt/webapp
