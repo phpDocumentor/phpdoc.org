@@ -1,2 +1,0 @@
-php_admin_flag opcache.enable off
-SetEnvIf Host ^dev.phpdoc.org REQUIRE_HTTPS=no
