@@ -4,7 +4,7 @@ on:
       - 3.0
 name: Deploy
 jobs:
-  docs:
+  website:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -17,7 +17,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          context: website
+          context: .
           buildargs: VERSION
           tags: '3.0'
         id: website_build
