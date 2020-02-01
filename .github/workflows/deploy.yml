@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - 3.0
+name: Deploy
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build
+        uses: elgohr/Publish-Docker-Github-Action@master
+        env:
+          VERSION: '3.0'
+        with:
+          name: phpdocumentor/phpdocumentor/phpdoc.org
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          context: website
+          buildargs: VERSION
+          tags: '3.0'
+        id: website_build
+#      - name: 'deploy'
+#        uses: jaapio/keelsh-deploy@1.0.0
+#        with:
+#          keelBaseUrl: ${{ secrets.KEEL_BASE_URL }}
+#          image: 'docker.pkg.github.com/phpdocumentor/phpdocumentor/phpdoc.org'
+#          tag: ${{ steps.docs_build.outputs.tag }}
