@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+import "../../node_modules/@phpdocumentor/template-default-assets/css/normalize.css"
+import "../../node_modules/@phpdocumentor/template-default-assets/css/base.css"
 import "./template.css"
 
 const Layout = ({ children }) => {

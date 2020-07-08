@@ -1,0 +1,2 @@
+up:
+	npm run develop
