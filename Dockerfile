@@ -6,7 +6,7 @@ WORKDIR /data
 
 RUN cd /data \
   && npm i -g gatsby-cli
-RUN npm ci
+RUN npm i
 RUN gatsby build
 
 FROM nginx:1.17
