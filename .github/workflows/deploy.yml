@@ -7,17 +7,22 @@ jobs:
   website:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@phpdocumentor'
       - uses: actions/checkout@master
       - name: Build
         uses: elgohr/Publish-Docker-Github-Action@master
         env:
           VERSION: '3.0'
-        with:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+      with:
           name: phpdocumentor/phpdocumentor/phpdoc.org
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          context: .
           buildargs: VERSION
           tags: '3.0'
         id: website_build
