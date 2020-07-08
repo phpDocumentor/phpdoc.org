@@ -18,7 +18,7 @@ jobs:
         env:
           VERSION: '3.0'
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
-      with:
+        with:
           name: phpdocumentor/phpdocumentor/phpdoc.org
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
