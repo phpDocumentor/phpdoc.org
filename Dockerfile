@@ -1,11 +1,11 @@
-FROM node as builder
+FROM node:lts as builder
 
 COPY . /data
 WORKDIR /data
 
 RUN cd /data \
   && npm i -g gatsby-cli \
-  && npm i \
+  && npm ci \
   && gatsby build
 
 FROM nginx:1.17

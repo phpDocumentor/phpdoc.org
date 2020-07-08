@@ -23,7 +23,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          buildargs: VERSION
+          buildargs: VERSION,NODE_AUTH_TOKEN
           tags: '3.0'
         id: website_build
 #      - name: 'deploy'
