@@ -4,9 +4,9 @@ COPY . /data
 WORKDIR /data
 
 RUN cd /data \
-  && npm i -g gatsby-cli \
-  && npm ci \
-  && gatsby build
+  && npm i -g gatsby-cli
+RUN npm ci
+RUN gatsby build
 
 FROM nginx:1.17
 
