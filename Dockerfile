@@ -1,5 +1,6 @@
 FROM node:lts as builder
 
+ARG NODE_AUTH_TOKEN
 COPY . /data
 WORKDIR /data
 
