@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/${process.env.VERSION}`,
   siteMetadata: {
     title: `phpDocumentor`,
     description: `Documentation Generator for PHP`,
