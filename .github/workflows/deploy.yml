@@ -26,9 +26,9 @@ jobs:
           buildargs: VERSION,NODE_AUTH_TOKEN
           tags: '3.0'
         id: website_build
-#      - name: 'deploy'
-#        uses: jaapio/keelsh-deploy@1.0.0
-#        with:
-#          keelBaseUrl: ${{ secrets.KEEL_BASE_URL }}
-#          image: 'docker.pkg.github.com/phpdocumentor/phpdocumentor/phpdoc.org'
-#          tag: ${{ steps.docs_build.outputs.tag }}
+      - name: 'deploy'
+        uses: jaapio/keelsh-deploy@1.0.0
+        with:
+          keelBaseUrl: ${{ secrets.KEEL_BASE_URL }}
+          image: 'docker.pkg.github.com/phpdocumentor/phpdoc.org/phpdoc.org'
+          tag: ${{ steps.docs_build.outputs.tag }}
