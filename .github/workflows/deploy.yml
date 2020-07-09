@@ -19,7 +19,7 @@ jobs:
           VERSION: '3.0'
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
         with:
-          name: phpdocumentor/phpdocumentor/phpdoc.org
+          name: phpdocumentor/phpdoc.org/phpdoc.org
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
