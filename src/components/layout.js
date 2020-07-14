@@ -13,6 +13,7 @@ import Header from "./header"
 import "../../node_modules/@phpdocumentor/template-default-assets/css/normalize.css"
 import "../../node_modules/@phpdocumentor/template-default-assets/css/base.css"
 import "./template.css"
+import Logo from "../images/logo.svg"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,6 +30,12 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main className="phpdocumentor">{children}</main>
+      <section className="phpdocumentor-section">
+        <img src={Logo} className="phpdocumentor-footer__logo"/>
+        <footer className="phpdocumentor-footer">
+
+        </footer>
+      </section>
     </>
   )
 };

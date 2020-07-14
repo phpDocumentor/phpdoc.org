@@ -8,24 +8,44 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home"/>
 
-    <section className="phpdocumentor-section phpdocumentor-content">
-      <article className="phpdocumentor-features">
-        <h2>Features<small>What can phpDocumentor 3 do to help you with your documentation</small></h2>
+    <section className="phpdocumentor-diagonal">
+      <section className="phpdocumentor-section phpdocumentor-content">
+        <article className="phpdocumentor-features">
+          <h2>Features<small>What can phpDocumentor 3 do to help you with your documentation</small></h2>
 
-        <section className="phpdocumentor-features__body">
           <img src={Screenshot} alt="Screenshot of what the output looks like"/>
-          <ul>
-            <li>Collects metadata from your code and renders API Reference documentation</li>
-            <li>Renders a class diagram of your source code (GraphViz or PlantUML is required</li>
-            <li>Supports all PHP syntax up, and including, to PHP 7.4</li>
-            <li>Extensive support for extra information through the use of DocBlocks</li>
-            <li>Rendered documentation can be used offline and online</li>
-            <li>Full-text search, also works when viewing offline</li>
-            <li>Easily integrated into your CI pipeline with our Github Action or Docker container</li>
+          <ul className="phpdocumentor-features__list">
+            <li>
+              <h3>Super easy to install and use</h3>
+              <p>Thanks to the power of Docker or PHAR</p>
+            </li>
+            <li>
+              <h3>Creates Beautiful Documentation</h3>
+              <p>Learns everything about your code and uses that to make sure you have the best documentation.</p>
+            </li>
+            <li>
+              <h3>UML Class Diagrams</h3>
+              <p>Gives you a UML Class Diagram for your project using PlantUML or GraphViz.</p>
+            </li>
+            <li>
+              <h3>Supports PHP latest</h3>
+              <p> Supports the latest features that PHP has to offer.</p>
+            </li>
+            <li>
+              <h3>More control using DocBlocks</h3>
+              <p>Uses the information from your DocBlocks to provide even more insight.</p>
+            </li>
+            <li>
+              <h3>Full-Text Search</h3>
+              <p>Need to find that one method? Full-text search is supported, even offline.</p>
+            </li>
+            <li>
+              <h3>CI Support out of the box</h3>
+              <p>Integrate it into your CI pipeline with our Github Action or Docker image</p>
+            </li>
           </ul>
-        </section>
-      </article>
-
+        </article>
+      </section>
     </section>
   </Layout>
 );
