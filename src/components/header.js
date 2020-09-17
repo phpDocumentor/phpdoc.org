@@ -17,7 +17,7 @@ const Header = ({siteTitle}) => (
             </h1>
             <nav className="phpdocumentor-topnav">
               <ul className="phpdocumentor-topnav__menu -menu">
-                <li className="phpdocumentor-topnav__menu-item"><Link to="/roadmap/"><span>Roadmap</span></Link></li>
+                {/*<li className="phpdocumentor-topnav__menu-item"><Link to="/roadmap/"><span>Roadmap</span></Link></li>*/}
                 <li className="phpdocumentor-topnav__menu-item"><a href="//docs.phpdoc.org/3.0/"><span>Documentation</span></a></li>
                 <li className="phpdocumentor-topnav__menu-item"><a href="//demo.phpdoc.org/3.0/"><span>Templates</span></a></li>
                 <li className="phpdocumentor-topnav__menu-item"><Link to="/contact/"><span>Contact</span></Link></li>

@@ -32,9 +32,6 @@ const Layout = ({ children }) => {
       <main className="phpdocumentor">{children}</main>
       <section className="phpdocumentor-section">
         <img src={Logo} className="phpdocumentor-footer__logo"/>
-        <footer className="phpdocumentor-footer">
-
-        </footer>
       </section>
     </>
   )
