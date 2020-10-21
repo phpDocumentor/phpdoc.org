@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://docs.phpdoc.org/3.0/css/normalize.css">
     <link rel="stylesheet" href="https://docs.phpdoc.org/3.0/css/base.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/template.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
@@ -120,45 +120,48 @@
         <section class="phpdocumentor-section phpdocumentor-content">
             <article>
                 <h2>Usage<small>Easy to install, and to use!</small></h2>
-                <p>You can use one of the following two methods</p>
-                <ol>
-                    <li>Download our <a href="/phpDocumentor.phar">PHAR</a> file</li>
-                    <li>
-                        Use our very own <a href="https://hub.docker.com/r/phpdoc/phpdoc">Docker image</a>; no
-                        installation needed!
-                    </li>
-                </ol>
                 <section class="phpdocumentor-side-by-side">
                     <section>
                         <h3>Getting started using the PHAR</h3>
                         <p>
-                            After you downloaded the PHAR file and giving it a nice and cozy place on your hard drive,
-                            don't forget to power it up by making it executable.
+                            Start by downloading our latest <a href="phpDocumentor.phar">PHAR</a> file and giving it a
+                            nice and cozy place on your hard drive.
                         </p>
                         <code>
-                            <pre>$ chmod +x phpDocumentor.phar</pre>
+                            <pre><span class="phpdocumentor-code__shell">$ </span>wget https://phpdoc.org/3.0/phpDocumentor.phar</pre>
+                        </code>
+                        <p>
+                            After you downloaded the PHAR file, don't forget to power it up by making it executable.
+                        </p>
+                        <code>
+                            <pre><span class="phpdocumentor-code__shell">$ </span>chmod +x phpDocumentor.phar</pre>
                         </code>
                         <blockquote>
-                            Also, you may want to consider to rename it to <strong><code>phpdoc</code></strong>;
+                            Also, you may want to consider renaming it to <strong><code>phpdoc</code></strong>;
                             we'll understand.
                         </blockquote>
                         <p>Then, all you need to do is run it!</p></section>
                     <section>
                         <h3>Getting started using Docker</h3>
                         <p>
+                            Use our very own <a href="https://hub.docker.com/r/phpdoc/phpdoc">Docker image</a>; no
+                            installation needed!
+                        </p>
+                        <p>
                             Treat our docker image like you treat all your other utility images. Just don't forgot to
                             volume mount your current directory to <code>/data</code> inside the container. Remember: No
                             data, No docs.
                         </p>
                         <code>
-                            <pre>docker run --rm -v $<!-- -->{PWD}<!-- -->:/data phpdoc/phpdoc:3</pre>
+                            <pre><span class="phpdocumentor-code__shell">$ </span>docker run --rm -v $<!-- -->{PWD}<!-- -->:/data phpdoc/phpdoc:3</pre>
                         </code>
-                        <p>Tada!</p></section>
+                        <p>Tada!</p>
+                    </section>
                 </section>
                 <aside class="phpdocumentor-admonition">
-                    <h5>But wait? What about composer?</h5>
+                    <h5>But wait? What about Composer?</h5>
                     <p>
-                        Ah, you discovered our secret. There is a phpdocumentor composer package that you can use to
+                        Ah, you discovered our secret. There is a phpDocumentor composer package that you could use to
                         install phpDocumentor.
                     </p>
                     <p>
@@ -168,8 +171,8 @@
                         And when I say high, it is really high.
                     </p>
                     <p>
-                        So, because of the above: we do not endorse nor actively support installing phpDocumentor using
-                        Composer.
+                        So, because of the above: <strong>we do not endorse nor actively support installing phpDocumentor using
+                        Composer</strong>.
                     </p>
                 </aside>
             </article>

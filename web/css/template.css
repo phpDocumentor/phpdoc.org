@@ -52,14 +52,13 @@
 }
 .phpdocumentor-content h2 {
     font-size: 3rem;
-    text-align: center;
     border-bottom: 2px solid #ddd;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
+    padding-top: 2rem;
 }
 
 .phpdocumentor-content h2 small {
-    text-align: center;
     display: block;
     font-weight: 600;
     font-size: 1.2rem;
@@ -131,4 +130,27 @@
     margin: 6rem auto 3rem;
     width: 4rem;
     display: block;
+}
+
+.phpdocumentor-admonition {
+    border-color: #d6e7cb;
+    background-color: #f6fcf3;
+    font-size: 85%;
+    padding: 0 .5rem;
+    margin: 2rem 0;
+}
+
+pre {
+    background: #171a16;
+    color: #f6fcf3;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 2px 3px silver;
+}
+
+.phpdocumentor-code__shell {
+    color: #69b347;
+    pointer-events: none;
+    user-select: none;
 }
