@@ -2,21 +2,28 @@
     display: flex;
     align-items: center;
     margin-bottom: 3rem;
-    max-width: 70%;
+    overflow: hidden;
 }
 
 .phpdocumentor-hero__blurb,
 .phpdocumentor-hero__illustration {
-    flex: 1 1;
+    flex: 1 1 0;
 }
 .phpdocumentor-hero__illustration {
     text-align: right;
 }
+.phpdocumentor-hero__illustration img {
+    width: 100%;
+}
 .phpdocumentor-hero__blurb-title {
-    font-size: 2rem;
+    font-size: 2.8rem;
     line-height: 1.3;
     font-weight: normal;
     margin-bottom: 0;
+    white-space: nowrap;
+}
+.phpdocumentor-hero__blurb-slogan {
+    font-size: 1.2rem;
 }
 .phpdocumentor-hero__blurb-title em {
     font-style: normal;
@@ -38,12 +45,17 @@
     transform: skewY(2deg);
 }
 
+.phpdocumentor-features__screenshot {
+    width: 33%;
+    float: left;
+    margin-right: 2rem;
+}
 .phpdocumentor-content h2 {
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
     padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .phpdocumentor-content h2 small {
@@ -80,12 +92,20 @@
     font-size: 1rem;
 }
 
-@media (min-width: 550px) {
-    .phpdocumentor-features {
-        display: grid;
-        grid-template-columns: 2fr 3fr;
+@media (max-width: 1023px) {
+    .phpdocumentor-hero__illustration {
+        position: absolute;
+        z-index: -1;
+        opacity: .1;
+        right: -14rem;
     }
-
+    .phpdocumentor-features__screenshot {
+        width: 100%;
+        margin-bottom: 2rem;
+        float: none;
+    }
+}
+@media (min-width: 550px) {
     .phpdocumentor-features__list {
         display: grid;
         grid-template-columns: 1fr 1fr;
