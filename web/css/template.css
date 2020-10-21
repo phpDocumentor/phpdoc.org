@@ -1,8 +1,40 @@
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0.2;
+        -webkit-transform: translate3d(5%, 0, 0);
+        transform: translate3d(5%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0.2;
+        -webkit-transform: translate3d(5%, 0, 0);
+        transform: translate3d(5%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
 .phpdocumentor-hero {
     display: flex;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     overflow: hidden;
+}
+.phpdocumentor-hero .phpdocumentor-button {
+    font-size: 110%;
+    padding: .125rem 1.5rem;
+    height: auto;
+    transition: background-color .2s ease-in-out;
 }
 
 .phpdocumentor-hero__blurb,
@@ -11,6 +43,14 @@
 }
 .phpdocumentor-hero__illustration {
     text-align: right;
+
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
 }
 .phpdocumentor-hero__illustration img {
     width: 100%;
@@ -109,7 +149,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
-        max-width: 45rem;
     }
 
     .phpdocumentor-side-by-side {
