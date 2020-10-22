@@ -24,6 +24,84 @@
     }
 }
 
+.phpdocumentor-header__menu-button {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+}
+.phpdocumentor-header__menu-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.phpdocumentor-topnav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    flex-basis: 100%;
+}
+.phpdocumentor-topnav__menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.phpdocumentor-topnav__menu-item {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: var(--spacing-sm) 0
+}
+.phpdocumentor-topnav__menu-item.-social {
+    width: auto;
+    padding: var(--spacing-sm)
+}
+.phpdocumentor-header__menu-button:checked ~ .phpdocumentor-topnav {
+    max-height: 250px;
+    padding-top: var(--spacing-md);
+}
+.phpdocumentor-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    padding: var(--spacing-md) var(--spacing-md);
+}
+.phpdocumentor-header > * {
+    height: auto;
+}
+.phpdocumentor-title {
+    width: auto;
+}
+@media (min-width: 550px) {
+    .phpdocumentor-title {
+        width: 100%;
+    }
+    .phpdocumentor-header {
+        flex-direction: column;
+        padding: var(--spacing-lg) var(--spacing-lg);
+    }
+    .phpdocumentor-header__menu-icon {
+        display: none;
+    }
+    .phpdocumentor-topnav {
+        max-height: none;
+        overflow: visible;
+        flex-basis: auto;
+    }
+    .phpdocumentor-topnav__menu {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+    }
+    .phpdocumentor-topnav__menu-item,
+    .phpdocumentor-topnav__menu-item.-social {
+        width: auto;
+        display: inline;
+        text-align: right;
+        padding: 0 0 0 var(--spacing-md)
+    }
+}
+
 blockquote {
     border-left: 4px solid var(--primary-color);
     margin: var(--spacing-md) 0;
@@ -33,20 +111,6 @@ blockquote {
     font-size: var(--text-sm);
 }
 
-.phpdocumentor-header {
-    height: auto;
-    flex-direction: column;
-    padding: var(--spacing-lg) var(--spacing-lg);
-}
-.phpdocumentor-header > * {
-    height: auto;
-}
-.phpdocumentor-title {
-    width: 100%;
-}
-.phpdocumentor-title__link {
-    transform-origin: right;
-}
 .phpdocumentor-topnav {
     margin: 0;
 }
@@ -177,8 +241,6 @@ blockquote {
     .phpdocumentor-header {
         flex-direction: row;
         min-height: var(--header-height);
-        padding-left: 0;
-        padding-right: 0;
     }
     .phpdocumentor-topnav {
         margin-left: 4%;
@@ -228,6 +290,11 @@ blockquote {
 
     .phpdocumentor-side-by-side h3 {
         margin-top: 0;
+    }
+}
+@media (min-width: 1200px) {
+    .phpdocumentor-header {
+        padding: 0;
     }
 }
 
