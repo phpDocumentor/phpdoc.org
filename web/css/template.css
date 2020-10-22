@@ -24,6 +24,15 @@
     }
 }
 
+blockquote {
+    border-left: 4px solid var(--primary-color);
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--primary-color-darker);
+    font-style: italic;
+    font-size: var(--text-sm);
+}
+
 .phpdocumentor-header {
     height: auto;
     flex-direction: column;
@@ -102,9 +111,9 @@
 }
 .phpdocumentor-content h2 {
     font-size: 2.5rem;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .phpdocumentor-content h2 small {
@@ -168,6 +177,8 @@
     .phpdocumentor-header {
         flex-direction: row;
         min-height: var(--header-height);
+        padding-left: 0;
+        padding-right: 0;
     }
     .phpdocumentor-topnav {
         margin-left: 4%;
@@ -213,6 +224,10 @@
 
     .phpdocumentor-side-by-side > * {
         flex: 1 1 0;
+    }
+
+    .phpdocumentor-side-by-side h3 {
+        margin-top: 0;
     }
 }
 
