@@ -24,15 +24,34 @@
     }
 }
 
+.phpdocumentor-header {
+    height: auto;
+    flex-direction: column;
+    padding: var(--spacing-lg) var(--spacing-lg);
+}
+.phpdocumentor-header > * {
+    height: auto;
+}
+.phpdocumentor-title {
+    width: 100%;
+}
+.phpdocumentor-title__link {
+    transform-origin: right;
+}
+.phpdocumentor-topnav {
+    margin: 0;
+}
+
 .phpdocumentor-hero {
     display: flex;
     align-items: center;
     margin-bottom: 4rem;
     overflow: hidden;
+    border-top: 1px solid var(--primary-color);
 }
 .phpdocumentor-hero .phpdocumentor-button {
-    font-size: 110%;
-    padding: .125rem 1.5rem;
+    font-size: 90%;
+    padding: 0 1.5rem;
     height: auto;
     transition: background-color .2s ease-in-out;
 }
@@ -43,27 +62,18 @@
 }
 .phpdocumentor-hero__illustration {
     text-align: right;
-
-    -webkit-animation-name: fadeInRight;
-    animation-name: fadeInRight;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
 }
 .phpdocumentor-hero__illustration img {
     width: 100%;
 }
 .phpdocumentor-hero__blurb-title {
-    font-size: 2.8rem;
+    font-size: 2rem;
     line-height: 1.3;
     font-weight: normal;
     margin-bottom: 0;
-    white-space: nowrap;
 }
 .phpdocumentor-hero__blurb-slogan {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .phpdocumentor-hero__blurb-title em {
     font-style: normal;
@@ -91,11 +101,10 @@
     margin-right: 2rem;
 }
 .phpdocumentor-content h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     border-bottom: 2px solid #ddd;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-    padding-top: 2rem;
 }
 
 .phpdocumentor-content h2 small {
@@ -105,6 +114,9 @@
     margin-top: .5rem;
 }
 
+.phpdocumentor-features__list .fa-li {
+    color: var(--primary-color)
+}
 .phpdocumentor-features__list {
     margin: 0;
     padding: 0;
@@ -121,8 +133,10 @@
 
 .phpdocumentor-features ul li {
     list-style: none;
-    background: url('../images/checkmark.svg') no-repeat left .4rem;
-    padding: .25rem 0 .25rem 2rem;
+}
+
+.phpdocumentor-features ul li p {
+    padding-right: 1rem;
 }
 
 .phpdocumentor-features__list h3 {
@@ -145,22 +159,65 @@
     }
 }
 @media (min-width: 550px) {
+    .phpdocumentor-title {
+        width: 30.6666666667%;
+    }
+    .phpdocumentor-title__link {
+        transform-origin: left;
+    }
+    .phpdocumentor-header {
+        flex-direction: row;
+        min-height: var(--header-height);
+    }
+    .phpdocumentor-topnav {
+        margin-left: 4%;
+    }
+    .phpdocumentor-hero__blurb-title {
+        font-size: 2.8rem;
+        white-space: nowrap;
+    }
+    .phpdocumentor-hero__blurb-slogan {
+        font-size: 1.2rem;
+    }
+    .phpdocumentor-hero .phpdocumentor-button {
+        font-size: 110%;
+        padding: .125rem 1.5rem;
+    }
+    .phpdocumentor-content h2 {
+        padding-top: 2rem;
+        font-size: 3rem;
+    }
     .phpdocumentor-features__list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
+        columns: 2;
+    }
+    .phpdocumentor-features__list li {
+        display: inline-block;
+        width: 100%
+    }
+}
+@media (min-width: 1024px) {
+    .phpdocumentor-hero__illustration {
+        -webkit-animation-name: fadeInRight;
+        animation-name: fadeInRight;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
     }
 
     .phpdocumentor-side-by-side {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .phpdocumentor-side-by-side > * {
+        flex: 1 1 0;
     }
 }
 
 .phpdocumentor-footer {
     height: 20rem;
-    background: hsl(96, 18%, 60%);
     border-top-left-radius: .75rem;
     border-top-right-radius: .75rem;
 }
@@ -172,20 +229,28 @@
 }
 
 .phpdocumentor-admonition {
-    border-color: #d6e7cb;
-    background-color: #f6fcf3;
+    border-color: var(--primary-color-lighten);
+    background-color: var(--primary-color-lighter);
     font-size: 85%;
-    padding: 0 .5rem;
+    padding: .5rem;
     margin: 2rem 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.phpdocumentor-admonition__icon {
+    font-size: 2rem;
+    margin: .75rem 0.75rem 1.25rem 0.5rem;
+    color: var(--primary-color);
 }
 
 pre {
-    background: #171a16;
-    color: #f6fcf3;
-    padding: .25rem .5rem;
+    background: var(--text-color);
+    color: var(--primary-color-lighter);
+    padding: .5rem 1rem;
     border-radius: .25rem;
-    border: 2px solid #e0e0e0;
-    box-shadow: 0 2px 3px silver;
+    box-shadow: 0 2px 3px var(--dark-gray);
+    font-size: 0.8rem;
 }
 
 .phpdocumentor-code__shell {
