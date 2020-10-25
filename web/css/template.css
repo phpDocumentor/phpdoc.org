@@ -24,97 +24,6 @@
     }
 }
 
-.phpdocumentor-header__menu-button {
-    position: absolute;
-    top: -100%;
-    left: -100%;
-}
-.phpdocumentor-header__menu-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-}
-
-.phpdocumentor-topnav {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    flex-basis: 100%;
-}
-.phpdocumentor-topnav__menu {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-.phpdocumentor-topnav__menu-item {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    padding: var(--spacing-sm) 0
-}
-.phpdocumentor-topnav__menu-item.-social {
-    width: auto;
-    padding: var(--spacing-sm)
-}
-.phpdocumentor-header__menu-button:checked ~ .phpdocumentor-topnav {
-    max-height: 250px;
-    padding-top: var(--spacing-md);
-}
-.phpdocumentor-header {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: auto;
-    padding: var(--spacing-md) var(--spacing-md);
-}
-.phpdocumentor-header > * {
-    height: auto;
-}
-.phpdocumentor-title {
-    width: auto;
-}
-@media (min-width: 550px) {
-    .phpdocumentor-title {
-        width: 100%;
-    }
-    .phpdocumentor-header {
-        flex-direction: column;
-        padding: var(--spacing-lg) var(--spacing-lg);
-    }
-    .phpdocumentor-header__menu-icon {
-        display: none;
-    }
-    .phpdocumentor-topnav {
-        max-height: none;
-        overflow: visible;
-        flex-basis: auto;
-    }
-    .phpdocumentor-topnav__menu {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-end;
-    }
-    .phpdocumentor-topnav__menu-item,
-    .phpdocumentor-topnav__menu-item.-social {
-        width: auto;
-        display: inline;
-        text-align: right;
-        padding: 0 0 0 var(--spacing-md)
-    }
-}
-
-blockquote {
-    border-left: 4px solid var(--primary-color);
-    margin: var(--spacing-md) 0;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    color: var(--primary-color-darker);
-    font-style: italic;
-    font-size: var(--text-sm);
-}
-
-.phpdocumentor-topnav {
-    margin: 0;
-}
-
 .phpdocumentor-hero {
     display: flex;
     align-items: center;
@@ -122,6 +31,7 @@ blockquote {
     overflow: hidden;
     border-top: 1px solid var(--primary-color);
 }
+
 .phpdocumentor-hero .phpdocumentor-button {
     font-size: 90%;
     padding: 0 1.5rem;
@@ -168,11 +78,6 @@ blockquote {
     transform: skewY(2deg);
 }
 
-.phpdocumentor-features__screenshot {
-    width: 33%;
-    float: left;
-    margin-right: 2rem;
-}
 .phpdocumentor-content h2 {
     font-size: 2.5rem;
     border-bottom: 2px solid var(--primary-color);
@@ -187,9 +92,16 @@ blockquote {
     margin-top: .5rem;
 }
 
+.phpdocumentor-features__screenshot {
+    width: 33%;
+    float: left;
+    margin-right: 2rem;
+}
+
 .phpdocumentor-features__list .fa-li {
     color: var(--primary-color)
 }
+
 .phpdocumentor-features__list {
     margin: 0;
     padding: 0;
@@ -232,19 +144,6 @@ blockquote {
     }
 }
 @media (min-width: 550px) {
-    .phpdocumentor-title {
-        width: 30.6666666667%;
-    }
-    .phpdocumentor-title__link {
-        transform-origin: left;
-    }
-    .phpdocumentor-header {
-        flex-direction: row;
-        min-height: var(--header-height);
-    }
-    .phpdocumentor-topnav {
-        margin-left: 4%;
-    }
     .phpdocumentor-hero__blurb-title {
         font-size: 2.8rem;
         white-space: nowrap;
@@ -292,11 +191,6 @@ blockquote {
         margin-top: 0;
     }
 }
-@media (min-width: 1200px) {
-    .phpdocumentor-header {
-        padding: 0;
-    }
-}
 
 .phpdocumentor-footer {
     height: 20rem;
@@ -308,22 +202,6 @@ blockquote {
     margin: 6rem auto 3rem;
     width: 4rem;
     display: block;
-}
-
-.phpdocumentor-admonition {
-    border-color: var(--primary-color-lighten);
-    background-color: var(--primary-color-lighter);
-    font-size: 85%;
-    padding: .5rem;
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.phpdocumentor-admonition__icon {
-    font-size: 2rem;
-    margin: .75rem 0.75rem 1.25rem 0.5rem;
-    color: var(--primary-color);
 }
 
 pre {
