@@ -28,3 +28,23 @@ jobs:
           keelBaseUrl: ${{ secrets.KEEL_BASE_URL }}
           image: 'docker.pkg.github.com/phpdocumentor/phpdoc.org/phpdoc.org'
           tag: ${{ steps.website_build.outputs.tag }}
+
+      - name: Build
+        uses: elgohr/Publish-Docker-Github-Action@master
+        env:
+          VERSION: 'latest'
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+        with:
+          name: phpdocumentor/phpdoc.org/phpdoc.org
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          buildargs: VERSION,NODE_AUTH_TOKEN
+          tags: 'latest'
+        id: website_latest_build
+      - name: 'deploy'
+        uses: jaapio/keelsh-deploy@1.0.0
+        with:
+          keelBaseUrl: ${{ secrets.KEEL_BASE_URL }}
+          image: 'docker.pkg.github.com/phpdocumentor/phpdoc.org/phpdoc.org'
+          tag: ${{ steps.website_latest_build.outputs.tag }}
