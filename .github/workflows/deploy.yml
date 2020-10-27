@@ -32,7 +32,7 @@ jobs:
       - name: Build
         uses: elgohr/Publish-Docker-Github-Action@master
         env:
-          VERSION: ''
+          VERSION: 'latest'
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
         with:
           name: phpdocumentor/phpdoc.org/phpdoc.org
